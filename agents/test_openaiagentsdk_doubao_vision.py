@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# 最简示例
+# 豆包 + OpenAI Agent SDK + 视觉问答
 
 # ===== 配置区（按需修改） =====
 ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"

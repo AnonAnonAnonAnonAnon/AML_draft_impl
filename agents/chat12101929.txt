@@ -1,17 +1,44 @@
-agents/test_openaiagentsdk_doubao.py
+agents/test_oasdk_db_file_io.py
 
-1）为什么“用 chat.completions，而不是 Responses API？”
+@function_tool 是什么原理？
 
-简短版原因：
+这个其实就是 Python 装饰器 语法糖，本质等价于：
 
-Doubao 对外宣称“兼容 OpenAI SDK”时，用的是 chat.completions 协议，官方示例也是 client.chat.completions.create(...)，没有保证完整支持 OpenAI 新的 /responses 语义（step/run、工具结果结构、structured output 那一套）。
+@function_tool
+def list_python_files(...):
+    ...
 
-OpenAI Agents SDK 里，ChatCompletions 是给第三方模型准备的安全选项：
+# 等价于：
 
-OpenAIResponsesModel 假定对方真的有 OpenAI 风格的 /responses，并且严格遵守它的字段和行为；
+def list_python_files(...):
+    ...
+list_python_files = function_tool(list_python_files)
 
-绝大多数第三方（包括豆包）目前只对齐了 /chat/completions，对 /responses 要么没实现，要么语义不完全一致。
 
-所以对“非 OpenAI 模型”，官方推荐做法就是：
-用 OpenAIChatCompletionsModel + 自己的 AsyncOpenAI(base_url=..., api_key=...)。
-这样只走大家都对齐得比较好的那条协议，最不容易踩坑。
+也就是：
+
+你先定义了一个普通函数 list_python_files。
+
+然后把这个函数对象传给 function_tool 这个函数。
+
+function_tool(...) 返回一个“包装过的函数对象”，再赋值回 list_python_files 这个名字。
+
+OpenAI Agents SDK 在 function_tool 里做了几件事：
+
+读取原始函数的名字、参数类型注解、docstring，生成一个 OpenAI 工具的 JSON 描述（name, parameters 等）。
+
+返回一个“带元数据的包装函数”，既可以当普通 Python 函数调用，又可以被 Agent 当作 tool 来调用。
+
+Runner 在执行时，会：
+
+把这些工具描述发给模型；
+
+当模型产生 tool_call，Runner 用这个包装函数在本地执行；
+
+再把返回值作为 tool 的结果喂回给模型。
+
+所以从你视角看：
+
+你只需要写一个普通函数，加个 @function_tool；
+
+SDK 自动帮你把它注册成 Agent 工具，并负责“模型 ↔ Python 函数”的来回调用。
