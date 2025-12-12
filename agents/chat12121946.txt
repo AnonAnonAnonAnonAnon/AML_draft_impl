@@ -162,3 +162,97 @@ PDF 用更稳的 reader/解析策略
 
 代码仓库做按文件类型/目录过滤与元数据（便于只检索某个模块）
 同时保证代码仍然尽量短、尽量不引入额外复杂依赖。
+
+
+
+OpenAI Agents SDK 对 RAG 的支持是什么？
+
+Agents SDK 本身是编排层（agent loop / tools / handoff / session / tracing），RAG 不是它“单独的一套框架”，而是通过 **OpenAI 平台的托管检索能力（hosted retrieval）**接入：File Search + Vector Stores。
+OpenAI
++1
+
+在 **OpenAI Agents SDK（Python）**里，你可以直接给 Agent 配一个 FileSearchTool，它会让模型在需要时自动调用 file_search，去你指定的 OpenAI Vector Store 里做语义 + 关键词检索，然后把检索结果用于生成答案。
+OpenAI
++2
+OpenAI
++2
+
+关键点：这是 OpenAI 托管工具，你不用自己写“chunk/embedding/search/rerank”的执行逻辑。
+OpenAI 平台
+
+可以把它理解成：**OpenAI 把“文档切块 + 向量化 + 建索引 + 检索”这整套 RAG 检索侧托管起来**。你在 Agents SDK 里只需要“把哪些知识库（vector store）给这个 agent”，模型需要时会自动走 `file_search` 工具把相关片段检索回来，再用这些片段生成答案。
+
+下面按“原理流程”把你关心的几个问题讲清楚：文件怎么进去、存在哪、怎么检索。
+
+---
+
+## 1) 你的文件怎么进去？
+
+典型流程是两步：
+
+1. **先上传到 Files API**（得到一个 `file` 对象 / `file_id`）
+2. **把这个 file 加到某个 Vector Store**（知识库容器）
+
+OpenAI 文档把这种容器叫 **vector store**，它里面放的是 `vector_store_file`（本质是“已被处理过、可检索”的 file 包装对象），底层仍然关联到原始的 `file`。
+
+---
+
+## 2) 存在哪？“谁在存、存什么”？
+
+**存储位置**：存在 **OpenAI 托管的 Vector Store** 里（属于你的 OpenAI 账号/组织空间下的资源，通过 `vector_store_id` 访问）。
+
+**存储内容不是简单的“原文件”**，更关键的是：
+当你把文件加入 vector store 时，OpenAI 会自动做三件事：
+
+* **chunk（切块）**
+* **embedding（向量化）**
+* **index（建索引）**
+
+这些都由 OpenAI 托管完成，你不需要自己写切分/嵌入/索引代码。
+
+并且计费也是按“解析出的 chunks 及其 embeddings 的存储体积”来算的（意味着它确实把 chunks+embeddings 存进了托管存储）。
+
+---
+
+## 3) 怎么检索？检索时发生了什么？
+
+当你在 Agents SDK 给 Agent 配了 `FileSearchTool(vector_store_ids=[...])` 后，本质上就是让模型在一次 Responses/Agentic 调用里具备一个“内置工具：file_search”。
+
+一次问答大概这样跑：
+
+1. **用户提问**进入 agent
+2. **模型判断需不需要查知识库**（工具调用决策）
+3. 若需要，模型会自动触发 `file_search`
+4. `file_search` 在你指定的 vector store 中执行检索，检索方式是 **semantic（向量语义检索）+ keyword（关键词检索）** 的组合
+5. 工具把“相关片段/结果”返回给模型
+6. 模型把这些结果当作外部证据，生成最终回答
+
+你可以把它理解成：OpenAI 在服务端帮你实现了一个“检索器（retriever）”，模型在同一次推理里把检索结果拿回来再写答案。
+
+---
+
+## 4) 你能控制哪些东西？
+
+你能控制的主要是“输入与边界”：
+
+* **给它哪些 vector stores**（`vector_store_ids`）——决定知识范围
+* **返回多少条结果**（top-k / max results）——决定上下文长度与召回量
+* **文件更新/增量**：你继续往同一个 vector store 追加文件即可（OpenAI 会对新增文件自动处理）
+* **切块策略**：API 参考里有 `chunking_strategy` 这样的参数（可选；默认 `auto`）
+* **生命周期/成本控制**：vector store 支持 expiration policies（减少长期存储成本）
+
+---
+
+## 5) 这和你自己做 LlamaIndex+Chroma 的 RAG 有什么关键差异？
+
+**OpenAI hosted file_search / vector stores：**
+
+* 优点：最快跑通、少工程、少坑；不写 chunk/embed/index；服务端托管。
+* 代价：向量与索引在 OpenAI 托管侧；你对检索细节（自定义 embedding、复杂混合检索、rerank、可解释性/可控性）掌控更少。
+
+**LlamaIndex + Chroma（自建）：**
+
+* 优点：完全可控（chunk 规则、embedding 模型、rerank、过滤策略、可解释性、离线/内网）
+* 代价：你要自己搭工程链路（解析、切分、嵌入、索引、持久化、更新等）
+
+
