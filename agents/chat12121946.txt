@@ -1,0 +1,164 @@
+3) 按你指定的技术栈：最小 RAG（可持久化）应该怎么做
+
+你给的选型是：
+
+框架：LlamaIndex（RAG 组件封装完整）
+LlamaIndex
+
+Embedding：OpenAI text-embedding-3-small（通过 LlamaIndex 的 OpenAIEmbedding）
+LlamaIndex
++1
+
+向量库：Chroma PersistentClient（本地落盘，自动加载）
+LlamaIndex
++1
+
+LLM：OpenAI（后续可用 LiteLLM 路由）
+
+Step 0｜安装依赖（注意 LlamaIndex 的“集成包”是独立的）
+
+建议一次装齐（你用 Python 3.10 正好满足 SK 的要求，但这里先做 RAG）：
+
+pip install -U \
+  llama-index \
+  llama-index-llms-openai \
+  llama-index-embeddings-openai \
+  llama-index-vector-stores-chroma \
+  chromadb
+
+
+其中 OpenAI embedding / OpenAI LLM / Chroma vector store 都是 LlamaIndex 的独立集成包。
+LlamaIndex
++3
+LlamaIndex
++3
+LlamaIndex
++3
+
+你之前 pip 下载慢：建议给 pip 配镜像（比如清华/阿里），这个不展开了，你照之前那套做即可。
+
+Step 1｜准备目录结构（建议）
+rag_demo/
+  data/              # 放你的 md/txt/pdf（先用 md/txt 最稳）
+  chroma_db/         # Chroma 的向量落盘目录
+  storage/           # LlamaIndex 的 docstore/index_store 落盘目录
+  build_index.py
+  query.py
+
+Step 2｜设置 OpenAI Key
+export OPENAI_API_KEY="sk-xxx"
+
+Step 3｜build_index.py：构建索引并落盘（只需跑一次）
+import os
+import chromadb
+
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, StorageContext, Settings
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.llms.openai import OpenAI
+from llama_index.vector_stores.chroma import ChromaVectorStore
+
+DATA_DIR = "data"
+CHROMA_DIR = "chroma_db"
+STORAGE_DIR = "storage"
+COLLECTION = "rag_demo"
+
+def main():
+    # 1) 模型：Embedding + LLM
+    Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+    Settings.llm = OpenAI()  # 默认即可；你也可以指定具体 chat 模型
+
+    # 2) 向量库：Chroma PersistentClient（自动落盘/加载）:contentReference[oaicite:8]{index=8}
+    chroma_client = chromadb.PersistentClient(path=CHROMA_DIR)
+    chroma_collection = chroma_client.get_or_create_collection(COLLECTION)
+    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)  # :contentReference[oaicite:9]{index=9}
+
+    # 3) 文档加载
+    docs = SimpleDirectoryReader(DATA_DIR).load_data()
+
+    # 4) 建索引
+    storage_context = StorageContext.from_defaults(vector_store=vector_store)
+    index = VectorStoreIndex.from_documents(docs, storage_context=storage_context)
+
+    # 5) 持久化 LlamaIndex 的 docstore/index 元信息（Chroma 自己会持久化向量）:contentReference[oaicite:10]{index=10}
+    index.storage_context.persist(persist_dir=STORAGE_DIR)
+
+    print("OK: index built and persisted.")
+
+if __name__ == "__main__":
+    assert os.environ.get("OPENAI_API_KEY"), "Please set OPENAI_API_KEY"
+    main()
+
+
+要点：
+
+Chroma 持久化由 PersistentClient(path=...)负责，官方明确会自动保存并在启动时加载。
+LlamaIndex
+
+LlamaIndex 的索引元信息/文档存储用 index.storage_context.persist(...)落盘，这是官方推荐的最简单方式。
+Libraries
+
+Step 4｜query.py：加载索引并查询（反复跑）
+import os
+import chromadb
+
+from llama_index.core import StorageContext, load_index_from_storage, Settings
+from llama_index.embeddings.openai import OpenAIEmbedding
+from llama_index.llms.openai import OpenAI
+from llama_index.vector_stores.chroma import ChromaVectorStore
+
+CHROMA_DIR = "chroma_db"
+STORAGE_DIR = "storage"
+COLLECTION = "rag_demo"
+
+def load_index():
+    Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+    Settings.llm = OpenAI()
+
+    chroma_client = chromadb.PersistentClient(path=CHROMA_DIR)
+    chroma_collection = chroma_client.get_or_create_collection(COLLECTION)
+    vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+
+    storage_context = StorageContext.from_defaults(
+        persist_dir=STORAGE_DIR,
+        vector_store=vector_store,
+    )
+    return load_index_from_storage(storage_context)
+
+def main():
+    index = load_index()
+    qe = index.as_query_engine(similarity_top_k=5)
+
+    while True:
+        q = input("\nQ> ").strip()
+        if not q:
+            continue
+        if q.lower() in {"exit", "quit"}:
+            break
+
+        resp = qe.query(q)
+        print("\nA>", resp)
+
+        # 可选：打印来源（强烈建议你第一版就做来源可视化）
+        if hasattr(resp, "source_nodes"):
+            print("\n[SOURCES]")
+            for i, sn in enumerate(resp.source_nodes[:5], 1):
+                meta = sn.node.metadata
+                print(f"{i}. {meta.get('file_name')}  score={sn.score:.4f}")
+                print(sn.node.get_text()[:200].replace("\n", " "), "...\n")
+
+if __name__ == "__main__":
+    assert os.environ.get("OPENAI_API_KEY"), "Please set OPENAI_API_KEY"
+    main()
+
+你跑通后，下一步最值得做的两项“最小增强”
+
+增量更新：新文件放进 data/ 后只对新增内容做插入（避免全量重建）。
+
+Rerank：如果你发现 top-k 召回不稳，加一个轻量重排（先用 LLMRerank 或专门 reranker），通常立刻改善。
+
+如果你把 data/ 里放的文档类型告诉我（主要是 代码仓库、论文 PDF、还是 md 笔记），我可以把上面脚本再做一次“最小定制”：
+
+PDF 用更稳的 reader/解析策略
+
+代码仓库做按文件类型/目录过滤与元数据（便于只检索某个模块）
+同时保证代码仍然尽量短、尽量不引入额外复杂依赖。

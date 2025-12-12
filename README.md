@@ -65,6 +65,7 @@ https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions
 ### (m) TODO
 
 simple RAG, how
+agents/chat12121946.txt
 
 More APIs from other sources
 

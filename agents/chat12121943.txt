@@ -1,0 +1,91 @@
+LiteLLM 具体做了什么？
+
+你以前要写两套逻辑：
+
+豆包：base_url、字段、兼容性、某些参数支持与否
+
+SiliconFlow：OpenAI-compatible，但模型名、返回字段、能力差异也要你自己处理
+
+LiteLLM 的核心是：你永远写一套
+
+completion(model=..., messages=..., **kwargs)
+
+
+它在内部根据 model 的“提供方前缀”（例如 volcengine/...、openai/...）决定：
+
+用哪个 provider 适配器
+
+该走哪个 endpoint/base_url
+
+该怎么组织请求体
+
+该怎么把响应统一成 OpenAI 风格（choices/message/content/usage）
+
+你看到的“便利”就是：上层逻辑不再关心每家 API 的细节。
+
+2）把“各家奇怪的参数 / 字段差异”做了适配与降噪
+
+同一个概念，各家叫法不同、位置不同、甚至格式不同：
+
+max tokens：max_tokens / max_new_tokens / max_output_tokens
+
+tool calling：字段位置、schema、是否严格兼容
+
+多模态：image 的字段结构、是否允许 data URL、是否要上传 URL
+
+reasoning：有的返回 reasoning_content，有的藏在别处，有的根本不支持
+
+LiteLLM 的工作就是做“参数映射 + 兼容处理”，尽量让你用一套参数写法跑多个模型。
+
+你实际感受到的就是：
+
+换后端时，改 model=（加前缀）+ 少量 api_base/api_key，而不是改整段 request 结构。
+
+3）提供“统一的模型路由与治理能力”（你还没用，但这是它的强项）
+
+你现在用的是 LiteLLM 的最小能力（统一 SDK）。它更值钱的部分其实是“治理层”：
+
+一个逻辑模型名 → 多个真实后端的路由
+
+例如 model="my-best-reasoner"
+70% 走 SiliconFlow Qwen3-VL，30% 走 Doubao（或反过来）
+
+fallback
+
+A 挂了自动切 B（你不用自己 try/except 写复杂逻辑）
+
+统一限流 / 并发 / 超时 / 重试
+
+统一日志与埋点
+
+每次调用记录：用的哪个后端、耗时、tokens、错误码
+
+统一成本核算
+
+多后端混用时，算钱、算 token 很关键
+
+这些是你做“多 Agent 系统 / 评测系统 / 生产服务”时真正会用到的。
+
+LiteLLM 给你带来的“直接好处”，用你的场景说
+
+你现在做的是“Agent SDK + 多后端（豆包 / SiliconFlow）”，你已经遇到过这些典型痛点：
+
+换后端就要改一堆 client/base_url/model 字段
+
+模型名 / 参数支持差异导致各种小崩溃
+
+你后面还想接更多国内 API（Kimi、GLM、MiniMax、Step、Baidu…）
+
+你想做评测、路由、fallback，而不是一直写 if/else
+
+LiteLLM 的作用就是把 1/2/3/4 这些事情，尽量从你的应用代码里挪走。
+
+你应用层（Agent 逻辑）最终只关心：
+
+我要调用“某类能力”（强推理 / 多模态 / 便宜 / 快）
+
+LiteLLM 帮我决定走哪个 provider、哪个模型、怎么发请求、怎么回退、怎么记日志
+
+一个一句话总结（你可以记住这句）
+
+LiteLLM = 统一的“模型驱动层”，让你的上层代码只写一次，后端模型随便换；并且它还能进一步提供路由、回退、限流、日志、成本等“生产级治理能力”。
