@@ -11,6 +11,11 @@ Other：
 ```bash
 pip install openai-agents
 pip install "litellm>=1.76.0"
+pip install arize-phoenix
+pip install openai-agents openinference-instrumentation-openai-agents arize-phoenix-otel
+pip install arize-phoenix arize-phoenix-otel \
+  openinference-instrumentation-openai \
+  openinference-instrumentation-openai-agents
 ```
 
 ### (2) Some debugging and running
@@ -41,6 +46,13 @@ Demo of LiteLLM:
 agents/test_litellm_2_source.py
 ```
 
+Demo of Tracking the agent's execution: 
+
+```bash
+python -m phoenix.server.main serve
+python agents/test_oasdk_doubao_phoenix.py
+```
+
 ### (n) Ref
 
 openai agent sdk:
@@ -62,13 +74,19 @@ Siliconflow:
 https://cloud.siliconflow.cn/me/models
 https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions
 
+Phoenix:
+https://google.github.io/adk-docs/observability/phoenix/
+
+W&B Weave:
+https://github.com/wandb/weave
+
 ### (m) TODO
 
 simple RAG: agents/chat12121946.txt
 
 More APIs from other sources. Stronger VLM, GPT 5.2 Thinking?
 
-
+trace: W&B Weave; other func of trace
 
 
 
