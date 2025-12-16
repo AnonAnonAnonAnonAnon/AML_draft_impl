@@ -55,22 +55,31 @@ python agents/test_oasdk_doubao_phoenix.py
 
 ### (3) Full ACT pipeline
 
+Link together ACT's data collection, processing, training, and inference.
 
+Smoke test, now reduce all quantities, for example, there is only one piece of data.
+
+Create these files: 
+
+```bash
 task_config/smoke_seed.yml
-
 task_config/smoke_act.yml
-
 policy/ACT/train_smoke.sh
-
-chmod +x policy/ACT/train_smoke.sh
-
 script/eval_policy_smoke.py
+```
 
+Authorization:
+
+```bash
+chmod +x policy/ACT/train_smoke.sh
 chmod +x policy/ACT/eval_smoke.sh
+```
 
+Smoke test:
 
-run_robotwin_smoke.py
-
+```bash
+python run_robotwin_smoke.py
+```
 
 ### (n) Ref
 

@@ -14,16 +14,16 @@ TASK_NAME = "beat_block_hammer"
 # 选择你要用的配置：
 # - "smoke_seed"：最快，只验证 collect 能跑通，不生成 hdf5（不能跑 ACT）
 # - "smoke_act" ：会生成 hdf5，可继续跑 ACT process/train
-TASK_CONFIG = "smoke_seed"
+TASK_CONFIG = "smoke_act"
 
 GPU_ID = "0"
 
 # 常改：2
 # 分阶段开关
 RUN_COLLECT = True
-RUN_ACT_PROCESS = False
-RUN_ACT_TRAIN = False
-RUN_ACT_EVAL = False
+RUN_ACT_PROCESS = True
+RUN_ACT_TRAIN = True
+RUN_ACT_EVAL = True
 
 # ACT 相关（只有在 TASK_CONFIG="smoke_act" 且 collect_data=true 且 episode_num>=expert 才能跑）
 EXPERT_DATA_NUM = 2
