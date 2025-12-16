@@ -53,6 +53,25 @@ python -m phoenix.server.main serve
 python agents/test_oasdk_doubao_phoenix.py
 ```
 
+### (3) Full ACT pipeline
+
+
+task_config/smoke_seed.yml
+
+task_config/smoke_act.yml
+
+policy/ACT/train_smoke.sh
+
+chmod +x policy/ACT/train_smoke.sh
+
+script/eval_policy_smoke.py
+
+chmod +x policy/ACT/eval_smoke.sh
+
+
+run_robotwin_smoke.py
+
+
 ### (n) Ref
 
 openai agent sdk:
