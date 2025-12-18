@@ -18,33 +18,29 @@ pip install arize-phoenix arize-phoenix-otel \
   openinference-instrumentation-openai-agents
 ```
 
-### (2) Some debugging and running
+### (2) Some debugging and running of wheels
 
-Demo of Doubao + OpenAI Agent SDK: 
+Demo of Doubao/Siliconflow/uiui + OpenAI Agent SDK, with visual input：
 
 ```bash
+python agents/test_oasdk_uiui_vision.py
 python agents/test_oasdk_doubao_vision.py
-```
-
-Demo of Siliconflow + OpenAI Agent SDK: 
-
-```bash
 python agents/test_oasdk_siliconflow_vision.py
 ```
 
-Demo of Multi-Agent+ using tools to read file trees and perform file read/write:
+Demo of Doubao/Siliconflow/uiui + LiteLLM + OpenAI Agent SDK. However, when there is image input, a large number of data URLs are printed in the terminal, which is difficult to block.: 
+
+```bash
+python agents/test_oasdk_litellm_vision.py
+```
+
+Demo of Multi-Agent + using tools to read file trees and perform file read/write:
 
 ```bash
 python agents/test_oasdk_doubao_file_io.py
 ```
 
 Output in: docs/agents_summary_20251211_194318.md
-
-Demo of LiteLLM: 
-
-```bash
-agents/test_litellm_2_source.py
-```
 
 Demo of Tracking the agent's execution: 
 
@@ -108,11 +104,16 @@ https://google.github.io/adk-docs/observability/phoenix/
 W&B Weave:
 https://github.com/wandb/weave
 
+uiui:
+https://sg.uiuiapi.com/console
+https://sg.uiuiapi.com/pricing
+https://7sqmooerpq.apifox.cn/
+
 ### (m) TODO
 
-simple RAG: agents/chat12121946.txt
+Manually encapsulate API calls from different sources
 
-More APIs from other sources. Stronger VLM, GPT 5.2 Thinking?
+simple RAG
 
 trace: W&B Weave; other func of trace
 
