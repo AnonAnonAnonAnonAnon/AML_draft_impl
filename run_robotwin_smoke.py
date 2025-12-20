@@ -16,7 +16,7 @@ TASK_NAME = "beat_block_hammer"
 # - "smoke_act" ：会生成 hdf5，可继续跑 ACT process/train
 TASK_CONFIG = "smoke_act"
 
-GPU_ID = "0"
+GPU_ID = "7"
 
 # 常改：2
 # 分阶段开关

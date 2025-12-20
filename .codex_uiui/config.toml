@@ -1,0 +1,11 @@
+preferred_auth_method = "apikey"
+
+model_provider = "uiui"
+model = "gpt-5-codex"   # 若 UIUI 不支持这个名字，换成 UIUI 控制台显示的真实模型 ID
+
+[model_providers.uiui]
+name = "UIUI (OpenAI-compatible)"
+base_url = "https://sg.uiuiapi.com/v1"
+env_key  = "UIUI_API_KEY"
+wire_api = "responses"
+query_params = {}

@@ -6,7 +6,7 @@ AML's agile implementation repository, with the task of rapid implementation
 RoboTwin 2.0 Env:
 https://robotwin-platform.github.io/doc/usage/robotwin-install.html
 
-Other：
+Agents framework：
 
 ```bash
 pip install openai-agents
@@ -18,7 +18,25 @@ pip install arize-phoenix arize-phoenix-otel \
   openinference-instrumentation-openai-agents
 ```
 
-### (2) Some debugging and running of wheels
+codex (global) (optional):
+
+```bash
+mkdir -p ~/.npm-global
+npm config set prefix "$HOME/.npm-global"
+echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+conda activate aml
+npm i -g @openai/codex
+```
+
+codex (Under the project directory):
+```bash
+npm init -y
+npm i -D @openai/codex
+npx codex --version
+```
+
+### (2) Some Running of Wheels
 
 Demo of Doubao/Siliconflow/uiui + OpenAI Agent SDK, with visual input：
 
@@ -49,7 +67,56 @@ python -m phoenix.server.main serve
 python agents/test_oasdk_doubao_phoenix.py
 ```
 
-### (3) Full ACT pipeline
+Demo of uiui + Codex. Create File:
+
+.codex_uiui/config.toml
+
+```bash
+python agents/run_codex_uiui_demo.py
+```
+
+### (3) Full ACT pipeline: Primitive
+
+Ref：
+
+https://robotwin-platform.github.io/doc/usage/collect-data.html
+
+https://robotwin-platform.github.io/doc/usage/ACT.html
+
+Collect Data:
+
+```bash
+bash collect_data.sh beat_block_hammer demo_clean 7
+```
+
+Install ACT environment:
+
+```bash
+cd policy/ACT
+pip install pyquaternion pyyaml rospkg pexpect mujoco==2.3.7 dm_control==1.0.14 opencv-python matplotlib einops packaging h5py ipython
+cd detr && pip install -e . && cd ..
+```
+
+Data Conversion:
+
+```bash
+bash process_data.sh beat_block_hammer demo_clean 50
+```
+
+Train:
+
+```bash
+nohup bash train.sh beat_block_hammer demo_clean 50 0 7 > logs/act_train_bbh_demo_clean_50_s0_g7.log 2>&1 &
+```
+
+Eval:
+
+```bash
+bash eval.sh beat_block_hammer demo_clean demo_clean 50 0 7
+```
+
+
+### (4) Full ACT pipeline: Edit
 
 Link together ACT's data collection, processing, training, and inference.
 
