@@ -101,7 +101,7 @@ https://robotwin-platform.github.io/doc/usage/collect-data.html
 
 https://robotwin-platform.github.io/doc/usage/ACT.html
 
-#### (3.1) DP 
+#### (3.2) DP 
 
 Collect Data, Install DP environment, Data Conversion, Train, Eval: 
 
@@ -115,6 +115,8 @@ pip install -e .
 bash process_data.sh beat_block_hammer demo_clean 50
 
 nohup bash train.sh beat_block_hammer demo_clean 50 0 14 7 > logs/dp_train_bbh_demo_clean_50_s0_g7_12211613.log 2>&1 &
+
+nohup bash eval.sh beat_block_hammer demo_clean demo_clean 50 0 7 > logs/dp_eval_bbh_demo_clean_50_s0_g7_12212112.log 2>&1 &
 
 ```
 
@@ -156,7 +158,7 @@ python run_robotwin_smoke.py
 
 #### (4.2) ACT
 
-New 7 files:
+New 6 files:
 
 full_pipeline/run_robotwin_act_full.py
 
@@ -177,6 +179,31 @@ cd full_pipeline
 
 nohup python run_robotwin_act_full.py > logs/act_full_run_11211636.log 2>&1 &
 ```
+
+#### (4.3) DP
+
+New 6 files:
+
+full_pipeline/run_robotwin_dp_full.py
+
+task_config/dp_full_12212127.yml (copy demo_clean.yml)
+
+policy/DP/process_full.sh (copy policy/DP/process_data.sh)
+
+policy/DP/train_full.sh (copy policy/DP/train.sh)
+
+policy/DP/eval_full.sh
+
+script/eval_policy_full.py (exists)
+
+```bash
+chmod +x policy/DP/process_full.sh policy/DP/train_full.sh policy/DP/eval_full.sh
+
+cd full_pipeline
+
+nohup python -u run_robotwin_dp_full.py > logs/dp_full_run_11212127.log 2>&1 &
+```
+
 
 ### (n) Ref
 
