@@ -75,7 +75,25 @@ Demo of uiui + Codex. Create File:
 python agents/run_codex_uiui_demo.py
 ```
 
-### (3) Full ACT pipeline: Primitive
+### (3) Full pipeline: Primitive
+
+#### (3.1) ACT 
+
+Collect Data, Install ACT environment, Data Conversion, Train, Eval: 
+
+```bash
+bash collect_data.sh beat_block_hammer demo_clean 7
+
+cd policy/ACT
+pip install pyquaternion pyyaml rospkg pexpect mujoco==2.3.7 dm_control==1.0.14 opencv-python matplotlib einops packaging h5py ipython
+cd detr && pip install -e . && cd ..
+
+bash process_data.sh beat_block_hammer demo_clean 50
+
+nohup bash train.sh beat_block_hammer demo_clean 50 0 7 > logs/act_train_bbh_demo_clean_50_s0_g7.log 2>&1 &
+
+nohup bash eval.sh beat_block_hammer demo_clean demo_clean 50 0 7 > logs/act_EVAL_bbh_demo_clean_50_s0_g7_12202207.log 2>&1 &
+```
 
 Ref：
 
@@ -83,40 +101,32 @@ https://robotwin-platform.github.io/doc/usage/collect-data.html
 
 https://robotwin-platform.github.io/doc/usage/ACT.html
 
-Collect Data:
+#### (3.1) DP 
+
+Collect Data, Install DP environment, Data Conversion, Train, Eval: 
 
 ```bash
 bash collect_data.sh beat_block_hammer demo_clean 7
-```
 
-Install ACT environment:
+cd policy/DP
+pip install zarr==2.12.0 wandb ipdb gpustat dm_control omegaconf hydra-core==1.2.0 dill==0.3.5.1 einops==0.4.1 diffusers==0.11.1 numba==0.56.4 moviepy imageio av matplotlib termcolor sympy
+pip install -e .
 
-```bash
-cd policy/ACT
-pip install pyquaternion pyyaml rospkg pexpect mujoco==2.3.7 dm_control==1.0.14 opencv-python matplotlib einops packaging h5py ipython
-cd detr && pip install -e . && cd ..
-```
-
-Data Conversion:
-
-```bash
 bash process_data.sh beat_block_hammer demo_clean 50
+
+nohup bash train.sh beat_block_hammer demo_clean 50 0 14 7 > logs/dp_train_bbh_demo_clean_50_s0_g7_12211613.log 2>&1 &
+
 ```
 
-Train:
+Ref：
 
-```bash
-nohup bash train.sh beat_block_hammer demo_clean 50 0 7 > logs/act_train_bbh_demo_clean_50_s0_g7.log 2>&1 &
-```
+https://robotwin-platform.github.io/doc/usage/collect-data.html
 
-Eval:
-
-```bash
-bash eval.sh beat_block_hammer demo_clean demo_clean 50 0 7
-```
-
+https://robotwin-platform.github.io/doc/usage/DP.html
 
 ### (4) Full ACT pipeline: Edit
+
+#### (4.1) Smoke
 
 Link together ACT's data collection, processing, training, and inference.
 
@@ -144,6 +154,30 @@ Smoke test:
 python run_robotwin_smoke.py
 ```
 
+#### (4.2) ACT
+
+New 7 files:
+
+full_pipeline/run_robotwin_act_full.py
+
+task_config/act_full_12211636.yml (copy demo_clean.yml)
+
+policy/ACT/process_full.sh (copy process_data.sh)
+
+policy/ACT/train_full.sh (copy train.sh)
+
+policy/ACT/eval_full.sh 
+
+script/eval_policy_full.py (copy eval_policy_smoke.py)
+
+```bash
+chmod +x policy/ACT/process_full.sh policy/ACT/train_full.sh policy/ACT/eval_full.sh
+
+cd full_pipeline
+
+nohup python run_robotwin_act_full.py > logs/act_full_run_11211636.log 2>&1 &
+```
+
 ### (n) Ref
 
 openai agent sdk:
@@ -154,6 +188,10 @@ https://openai.github.io/openai-agents-python/quickstart/
 RoboTwin 2.0:
 
 https://robotwin-platform.github.io/doc/index.html
+
+Codex:
+
+https://developers.openai.com/codex
 
 doubao:
 
