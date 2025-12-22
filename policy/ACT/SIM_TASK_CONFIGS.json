@@ -28,5 +28,25 @@
             "cam_right_wrist",
             "cam_left_wrist"
         ]
+    },
+    "sim-beat_block_hammer-act_full_20251222_150915-50": {
+        "dataset_dir": "./processed_data/sim-beat_block_hammer/act_full_20251222_150915-50",
+        "num_episodes": 50,
+        "episode_len": 1000,
+        "camera_names": [
+            "cam_high",
+            "cam_right_wrist",
+            "cam_left_wrist"
+        ]
+    },
+    "sim-beat_block_hammer-act_full_20251222_204733-50": {
+        "dataset_dir": "./processed_data/sim-beat_block_hammer/act_full_20251222_204733-50",
+        "num_episodes": 50,
+        "episode_len": 1000,
+        "camera_names": [
+            "cam_high",
+            "cam_right_wrist",
+            "cam_left_wrist"
+        ]
     }
 }

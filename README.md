@@ -212,6 +212,12 @@ python agents/run_codex_uiui_act_skill.py
 
 Do not use sandbox, otherwise rendering will not work.
 
+Users can specify some modifications: 
+
+```bash
+python agents/run_codex_uiui_act_skill_edit.py
+```
+
 ### (n) Ref
 
 openai agent sdk:
