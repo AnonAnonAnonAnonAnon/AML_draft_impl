@@ -1,0 +1,23 @@
+
+[RUN] (cwd=/home/liwenbo/projects/AML/AML_draft_impl)
+  bash collect_data.sh beat_block_hammer act_full_20251222_144206 7
+[31mRender Error[0m
+
+[RUN] (cwd=/home/liwenbo/projects/AML/AML_draft_impl/policy/ACT)
+  bash /home/liwenbo/projects/AML/AML_draft_impl/full_pipeline/runs/act_20251222_144206/process_act_20251222_144206.sh beat_block_hammer act_full_20251222_144206 50
+Traceback (most recent call last):
+  File "/home/liwenbo/projects/AML/AML_draft_impl/policy/ACT/process_data.py", line 146, in <module>
+    begin = data_transform(
+  File "/home/liwenbo/projects/AML/AML_draft_impl/policy/ACT/process_data.py", line 53, in data_transform
+    floders = os.listdir(path)
+FileNotFoundError: [Errno 2] No such file or directory: '../../data/beat_block_hammer/act_full_20251222_144206/data'
+Traceback (most recent call last):
+  File "/home/liwenbo/projects/AML/AML_draft_impl/full_pipeline/runs/act_20251222_144206/run_robotwin_act_20251222_144206.py", line 47, in <module>
+    main()
+  File "/home/liwenbo/projects/AML/AML_draft_impl/full_pipeline/runs/act_20251222_144206/run_robotwin_act_20251222_144206.py", line 31, in main
+    run(["bash", str((repo_root / "full_pipeline/runs/act_20251222_144206/process_act_20251222_144206.sh").resolve()),
+  File "/home/liwenbo/projects/AML/AML_draft_impl/full_pipeline/runs/act_20251222_144206/run_robotwin_act_20251222_144206.py", line 10, in run
+    subprocess.run(cmd, cwd=str(cwd), check=True)
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash', '/home/liwenbo/projects/AML/AML_draft_impl/full_pipeline/runs/act_20251222_144206/process_act_20251222_144206.sh', 'beat_block_hammer', 'act_full_20251222_144206', '50']' returned non-zero exit status 1.

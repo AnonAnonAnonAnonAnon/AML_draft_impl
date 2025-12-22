@@ -204,6 +204,13 @@ cd full_pipeline
 nohup python -u run_robotwin_dp_full.py > logs/dp_full_run_11212127.log 2>&1 &
 ```
 
+#### (4.3) ACT (Codex Skill Ver)
+
+```bash
+python agents/run_codex_uiui_act_skill.py
+```
+
+Do not use sandbox, otherwise rendering will not work.
 
 ### (n) Ref
 
