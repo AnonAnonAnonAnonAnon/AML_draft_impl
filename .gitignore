@@ -8,7 +8,6 @@ envs/curobo
 *.zip
 viewer_show.*
 eval_video/
-task_config/
 **/.DS_Store
 
 # eval result
@@ -26,5 +25,4 @@ envs/curobo/*
 .vscode
 /config.json
 
-/*.json*
 /*.txt

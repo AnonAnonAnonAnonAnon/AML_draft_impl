@@ -6,6 +6,8 @@ AML's agile implementation repository, with the task of rapid implementation
 RoboTwin 2.0 Env:
 https://robotwin-platform.github.io/doc/usage/robotwin-install.html
 
+RoboTwin 2.0 .gitignore: unignore task_config/ and /*.json*
+
 Agents framework：
 
 ```bash
