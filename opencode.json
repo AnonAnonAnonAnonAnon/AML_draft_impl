@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "model": "uiui/gpt-5.2",
+  "small_model": "uiui/gpt-5.2",
+
+  "provider": {
+    "uiui": {
+      "npm": "@ai-sdk/openai",
+      "name": "UIUI (OpenAI-compatible via @ai-sdk/openai)",
+      "options": {
+        "baseURL": "https://sg.uiuiapi.com/v1",
+        "apiKey": "{env:UIUI_API_KEY}"
+      },
+      "models": {
+        "gpt-5.2": { "name": "gpt-5.2 via UIUI" }
+      }
+    }
+  },
+
+  "permission": {
+    "edit": "ask",
+    "bash": "ask",
+    "webfetch": "deny"
+  }
+}
