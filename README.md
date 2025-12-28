@@ -37,6 +37,11 @@ npm i -D @openai/codex
 npx codex --version
 ```
 
+opencode
+```bash
+npm i -g opencode-ai@latest
+```
+
 ### (2) Some Running of Wheels
 
 Demo of Doubao/Siliconflow/uiui + OpenAI Agent SDK, with visual input：
@@ -74,6 +79,14 @@ Demo of uiui + Codex. Create File:
 
 ```bash
 python agents/run_codex_uiui_demo.py
+```
+
+Demo of uiui + opencode: 
+
+Create File: .env opencode.json
+
+```bash
+opencode run "请只读取本仓库：1) 列出顶层目录与作用；2) 指出入口文件/主要模块；3) 给出你下一步会读的3个关键文件路径"
 ```
 
 ### (3) Full pipeline: Primitive
@@ -257,6 +270,13 @@ uiui:
 https://sg.uiuiapi.com/console
 https://sg.uiuiapi.com/pricing
 https://7sqmooerpq.apifox.cn/
+
+opencode:
+
+https://opencode.ai/
+https://opencode.ai/docs/
+https://opencode.ai/docs/cli/
+
 
 ### (m) TODO
 
