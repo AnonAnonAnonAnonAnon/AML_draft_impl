@@ -16,6 +16,7 @@ pip install openai-agents openinference-instrumentation-openai-agents arize-phoe
 pip install arize-phoenix arize-phoenix-otel \
   openinference-instrumentation-openai \
   openinference-instrumentation-openai-agents
+python -m pip install -U "httpx[socks]"
 ```
 
 codex (global) (optional):

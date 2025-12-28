@@ -11,7 +11,16 @@ PROVIDER   = "uiui"  # "uiui" / "doubao" / "silicon"
 MODE       = "vision"   # "text" / "vision"
 USER_PROMPT = "你好。请用一句话回复我。"
 
-IMAGE_PATH = "/home/liwenbo/projects/AML/AML_draft_impl/agents/image.png"
+# IMAGE_PATH = "/home/liwenbo/projects/AML/AML_draft_impl/agents/image.png"
+
+# ===== CONFIG =====
+from pathlib import Path
+
+THIS_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = THIS_DIR.parent  # agents/ 的上一级通常就是 repo root
+IMAGE_PATH = str(THIS_DIR / "image.png")
+
+
 QUESTION   = "请说明这张图片的主要内容，并列出 3 个关键要素。"
 
 # --- UIUI ---

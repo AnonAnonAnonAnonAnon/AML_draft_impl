@@ -6,7 +6,16 @@ ARK_BASE_URL = "https://ark.cn-beijing.volces.com/api/v3"
 MODEL_ID     = "doubao-seed-1-6-251015"   # 豆包推理接入点 ID
 API_KEY      = "70f0d563-91a5-4704-a00e-f00cf3a9c864"    # 这里填你的 Ark API Key
 
-IMAGE_PATH   = "/home/zhangw/AML/AML_draft_impl/agents/image.png"
+# IMAGE_PATH   = "/home/zhangw/AML/AML_draft_impl/agents/image.png"
+
+# ===== CONFIG =====
+from pathlib import Path
+
+THIS_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = THIS_DIR.parent  # agents/ 的上一级通常就是 repo root
+IMAGE_PATH = str(THIS_DIR / "image.png")
+
+
 QUESTION     = "请说明这张图片的主要内容，并列出 3 个关键要素。"
 
 
