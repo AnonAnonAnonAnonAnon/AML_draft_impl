@@ -234,6 +234,20 @@ Users can specify some modifications:
 python agents/run_codex_uiui_act_skill_edit.py
 ```
 
+#### (4.4) ACT (Codex Ver)
+
+实现方案：……
+
+自底向上，逐个功能验证
+
+充钱，用最新基座
+
+在一个py中，nohup跑这个py
+
+大量prompt，都给份中文版
+
+https://chatgpt.com/g/g-p-68f644b977648191bffe54d55597f42c-automanipl/c/69529c66-fd68-8323-a23d-56cc8b549edf
+
 ### (n) Ref
 
 openai agent sdk:
