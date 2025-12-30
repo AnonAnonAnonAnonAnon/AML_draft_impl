@@ -252,6 +252,8 @@ It seems that uiui's service is not very stable.
 
 According to the customer service advice, select the codex group for the API key and choose model 5.2.
 
+Notice: This type of process will create a large number of child processes, which all need to be terminated and checked when stopping.
+
 ### (n) Ref
 
 openai agent sdk:

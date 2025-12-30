@@ -9,4 +9,4 @@ gpu_id=${3}
 export CUDA_VISIBLE_DEVICES=${gpu_id}
 
 PYTHONWARNINGS=ignore::UserWarning \
-python script/collect_data.py $task_name $task_config
+python -u script/collect_data.py $task_name $task_config

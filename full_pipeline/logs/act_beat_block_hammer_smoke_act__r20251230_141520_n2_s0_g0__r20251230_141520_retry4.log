@@ -1,0 +1,738 @@
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl)
+  bash collect_data__r20251230_141520.sh beat_block_hammer smoke_act__r20251230_141520 0
+[32mRender Well[0m
+============= Config =============
+
+[95mMessy Table:[0m False
+[95mRandom Background:[0m False
+[95mRandom Light:[0m True
+ - Crazy Random Light Rate: 0
+[95mRandom Table Height:[0m 0
+[95mRandom Head Camera Distance:[0m 0
+[94mHead Camera Config:[0m D435, True
+[94mWrist Camera Config:[0m D435, True
+[94mEmbodiment Config:[0m aloha-agilex
+
+==================================
+Task Name: [34mbeat_block_hammer[0m
+[93m[Start Seed and Pre Motion Data Collection][0m
+Exist seed file, Start from: 0 / 0
+simulate data episode 0 success! (seed = 0)
+simulate data episode 1 success! (seed = 1)
+
+Complete simulation, failed [91m0[0m times / 2 tries 
+
+[93m[Start Data Collection][0m
+[34mTask name: beat_block_hammer[0m
+saving: episode =  0  index =  0saving: episode =  0  index =  1saving: episode =  0  index =  2saving: episode =  0  index =  3saving: episode =  0  index =  4saving: episode =  0  index =  5saving: episode =  0  index =  6saving: episode =  0  index =  7saving: episode =  0  index =  8saving: episode =  0  index =  9saving: episode =  0  index =  10saving: episode =  0  index =  11saving: episode =  0  index =  12saving: episode =  0  index =  13saving: episode =  0  index =  14saving: episode =  0  index =  15saving: episode =  0  index =  16saving: episode =  0  index =  17saving: episode =  0  index =  18saving: episode =  0  index =  19saving: episode =  0  index =  20saving: episode =  0  index =  21saving: episode =  0  index =  22saving: episode =  0  index =  23saving: episode =  0  index =  24saving: episode =  0  index =  25saving: episode =  0  index =  26saving: episode =  0  index =  27saving: episode =  0  index =  28saving: episode =  0  index =  29saving: episode =  0  index =  30saving: episode =  0  index =  31saving: episode =  0  index =  32saving: episode =  0  index =  33saving: episode =  0  index =  34saving: episode =  0  index =  35saving: episode =  0  index =  36saving: episode =  0  index =  37saving: episode =  0  index =  38saving: episode =  0  index =  39saving: episode =  0  index =  40saving: episode =  0  index =  41saving: episode =  0  index =  42saving: episode =  0  index =  43saving: episode =  0  index =  44saving: episode =  0  index =  45saving: episode =  0  index =  46saving: episode =  0  index =  47saving: episode =  0  index =  48saving: episode =  0  index =  49saving: episode =  0  index =  50saving: episode =  0  index =  51saving: episode =  0  index =  52saving: episode =  0  index =  53saving: episode =  0  index =  54saving: episode =  0  index =  55saving: episode =  0  index =  56saving: episode =  0  index =  57saving: episode =  0  index =  58saving: episode =  0  index =  59saving: episode =  0  index =  60saving: episode =  0  index =  61saving: episode =  0  index =  62saving: episode =  0  index =  63saving: episode =  0  index =  64saving: episode =  0  index =  65saving: episode =  0  index =  66saving: episode =  0  index =  67saving: episode =  0  index =  68saving: episode =  0  index =  69saving: episode =  0  index =  70saving: episode =  0  index =  71saving: episode =  0  index =  72saving: episode =  0  index =  73saving: episode =  0  index =  74saving: episode =  0  index =  75saving: episode =  0  index =  76saving: episode =  0  index =  77saving: episode =  0  index =  78saving: episode =  0  index =  79saving: episode =  0  index =  80saving: episode =  0  index =  81saving: episode =  0  index =  82saving: episode =  0  index =  83saving: episode =  0  index =  84saving: episode =  0  index =  85saving: episode =  0  index =  86saving: episode =  0  index =  87saving: episode =  0  index =  88saving: episode =  0  index =  89saving: episode =  0  index =  90saving: episode =  0  index =  91saving: episode =  0  index =  92saving: episode =  0  index =  93saving: episode =  0  index =  94saving: episode =  0  index =  95saving: episode =  0  index =  96saving: episode =  0  index =  97saving: episode =  0  index =  98saving: episode =  0  index =  99saving: episode =  0  index =  100saving: episode =  0  index =  101saving: episode =  0  index =  102saving: episode =  0  index =  103saving: episode =  0  index =  104saving: episode =  0  index =  105saving: episode =  0  index =  106saving: episode =  0  index =  107saving: episode =  0  index =  108saving: episode =  0  index =  109🎬 Video is saved to `./data/beat_block_hammer/smoke_act__r20251230_141520/video/episode0.mp4`, containing [94m110[0m frames at 320×240 resolution and 30.0 FPS.
+[92mFolder ./data/beat_block_hammer/smoke_act__r20251230_141520/.cache/episode0/ deleted successfully.[0m
+[34mTask name: beat_block_hammer[0m
+saving: episode =  1  index =  0saving: episode =  1  index =  1saving: episode =  1  index =  2saving: episode =  1  index =  3saving: episode =  1  index =  4saving: episode =  1  index =  5saving: episode =  1  index =  6saving: episode =  1  index =  7saving: episode =  1  index =  8saving: episode =  1  index =  9saving: episode =  1  index =  10saving: episode =  1  index =  11saving: episode =  1  index =  12saving: episode =  1  index =  13saving: episode =  1  index =  14saving: episode =  1  index =  15saving: episode =  1  index =  16saving: episode =  1  index =  17saving: episode =  1  index =  18saving: episode =  1  index =  19saving: episode =  1  index =  20saving: episode =  1  index =  21saving: episode =  1  index =  22saving: episode =  1  index =  23saving: episode =  1  index =  24saving: episode =  1  index =  25saving: episode =  1  index =  26saving: episode =  1  index =  27saving: episode =  1  index =  28saving: episode =  1  index =  29saving: episode =  1  index =  30saving: episode =  1  index =  31saving: episode =  1  index =  32saving: episode =  1  index =  33saving: episode =  1  index =  34saving: episode =  1  index =  35saving: episode =  1  index =  36saving: episode =  1  index =  37saving: episode =  1  index =  38saving: episode =  1  index =  39saving: episode =  1  index =  40saving: episode =  1  index =  41saving: episode =  1  index =  42saving: episode =  1  index =  43saving: episode =  1  index =  44saving: episode =  1  index =  45saving: episode =  1  index =  46saving: episode =  1  index =  47saving: episode =  1  index =  48saving: episode =  1  index =  49saving: episode =  1  index =  50saving: episode =  1  index =  51saving: episode =  1  index =  52saving: episode =  1  index =  53saving: episode =  1  index =  54saving: episode =  1  index =  55saving: episode =  1  index =  56saving: episode =  1  index =  57saving: episode =  1  index =  58saving: episode =  1  index =  59saving: episode =  1  index =  60saving: episode =  1  index =  61saving: episode =  1  index =  62saving: episode =  1  index =  63saving: episode =  1  index =  64saving: episode =  1  index =  65saving: episode =  1  index =  66saving: episode =  1  index =  67saving: episode =  1  index =  68saving: episode =  1  index =  69saving: episode =  1  index =  70saving: episode =  1  index =  71saving: episode =  1  index =  72saving: episode =  1  index =  73saving: episode =  1  index =  74saving: episode =  1  index =  75saving: episode =  1  index =  76saving: episode =  1  index =  77saving: episode =  1  index =  78saving: episode =  1  index =  79saving: episode =  1  index =  80saving: episode =  1  index =  81saving: episode =  1  index =  82saving: episode =  1  index =  83saving: episode =  1  index =  84saving: episode =  1  index =  85saving: episode =  1  index =  86saving: episode =  1  index =  87saving: episode =  1  index =  88saving: episode =  1  index =  89saving: episode =  1  index =  90saving: episode =  1  index =  91saving: episode =  1  index =  92saving: episode =  1  index =  93saving: episode =  1  index =  94saving: episode =  1  index =  95saving: episode =  1  index =  96saving: episode =  1  index =  97saving: episode =  1  index =  98saving: episode =  1  index =  99saving: episode =  1  index =  100saving: episode =  1  index =  101saving: episode =  1  index =  102saving: episode =  1  index =  103saving: episode =  1  index =  104saving: episode =  1  index =  105saving: episode =  1  index =  106saving: episode =  1  index =  107saving: episode =  1  index =  108saving: episode =  1  index =  109saving: episode =  1  index =  110saving: episode =  1  index =  111saving: episode =  1  index =  112saving: episode =  1  index =  113saving: episode =  1  index =  114saving: episode =  1  index =  115saving: episode =  1  index =  116🎬 Video is saved to `./data/beat_block_hammer/smoke_act__r20251230_141520/video/episode1.mp4`, containing [94m117[0m frames at 320×240 resolution and 30.0 FPS.
+[92mFolder ./data/beat_block_hammer/smoke_act__r20251230_141520/.cache/episode1/ deleted successfully.[0m
+Successfully Saved Instructions
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl/policy/ACT)
+  bash /mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/process_act_20251230_141520.sh beat_block_hammer smoke_act__r20251230_141520 2
+proccess 0 success!
+proccess 1 success!
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl/policy/ACT)
+  bash /mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/train_act_20251230_141520.sh beat_block_hammer smoke_act__r20251230_141520 2 0 0
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+Data from: ./processed_data/sim-beat_block_hammer/smoke_act__r20251230_141520-2
+
+build_ACT_model_and_optimizer Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/smoke_act__r20251230_141520-2', policy_class='ACT', task_name='sim-beat_block_hammer-smoke_act__r20251230_141520-2', seed=0, num_epochs=6000, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=2000, num_queries=50)
+Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/smoke_act__r20251230_141520-2', policy_class='ACT', task_name='sim-beat_block_hammer-smoke_act__r20251230_141520-2', seed=0, num_epochs=6000, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=2000, num_queries=50)
+number of parameters: 83.90M
+KL Weight 10
+  0%|          | 0/6000 [00:00<?, ?it/s]
+Epoch 0
+Val loss:   82.00967
+  0%|          | 1/6000 [00:01<2:08:32,  1.29s/it]Train loss: 87.26512
+
+Epoch 1
+Val loss:   72.25190
+  0%|          | 2/6000 [00:01<1:12:40,  1.38it/s]Train loss: 76.04491
+
+Epoch 2
+Val loss:   64.52350
+  0%|          | 3/6000 [00:01<54:35,  1.83it/s]  Train loss: 66.56483
+
+Epoch 3
+Val loss:   46.47879
+  0%|          | 4/6000 [00:02<46:19,  2.16it/s]Train loss: 45.28359
+
+Epoch 4
+Val loss:   39.47722
+  0%|          | 5/6000 [00:02<42:00,  2.38it/s]Train loss: 43.13496
+
+Epoch 5
+Val loss:   63.08343
+  0%|          | 6/6000 [00:02<38:43,  2.58it/s]Train loss: 37.18717
+
+Epoch 6
+Val loss:   59.13839
+  0%|          | 7/6000 [00:03<36:58,  2.70it/s]Train loss: 26.04950
+
+Epoch 7
+Val loss:   16.89781
+  0%|          | 8/6000 [00:03<36:17,  2.75it/s]Train loss: 32.79721
+
+Epoch 8
+Val loss:   42.14690
+  0%|          | 9/6000 [00:03<35:08,  2.84it/s]Train loss: 46.91544
+
+Epoch 9
+Val loss:   11.05596
+  0%|          | 10/6000 [00:04<34:42,  2.88it/s]Train loss: 13.17780
+
+Epoch 10
+Val loss:   60.76350
+  0%|          | 11/6000 [00:04<33:33,  2.97it/s]Train loss: 14.09884
+
+Epoch 11
+Val loss:   59.07222
+  0%|          | 12/6000 [00:04<33:07,  3.01it/s]Train loss: 37.62372
+
+Epoch 12
+Val loss:   47.02100
+  0%|          | 13/6000 [00:05<32:52,  3.04it/s]Train loss: 30.77953
+
+Epoch 13
+Val loss:   6.43028
+  0%|          | 14/6000 [00:05<32:54,  3.03it/s]Train loss: 28.29940
+
+Epoch 14
+Val loss:   16.32235
+  0%|          | 15/6000 [00:05<32:39,  3.05it/s]Train loss: 14.51674
+
+Epoch 15
+Val loss:   32.26308
+  0%|          | 16/6000 [00:06<32:32,  3.06it/s]Train loss: 9.24448
+
+Epoch 16
+Val loss:   42.84970
+  0%|          | 17/6000 [00:06<32:37,  3.06it/s]Train loss: 11.71999
+
+Epoch 17
+Val loss:   41.30730
+  0%|          | 18/6000 [00:06<32:27,  3.07it/s]Train loss: 7.29947
+
+Epoch 18
+Val loss:   6.82279
+  0%|          | 19/6000 [00:07<32:24,  3.08it/s]Train loss: 15.78087
+
+Epoch 19
+Val loss:   6.74618
+  0%|          | 20/6000 [00:07<32:21,  3.08it/s]Train loss: 13.07417
+
+Epoch 20
+Val loss:   5.24275
+  0%|          | 21/6000 [00:07<32:47,  3.04it/s]Train loss: 18.25034
+
+Epoch 21
+Val loss:   14.81578
+  0%|          | 22/6000 [00:08<33:18,  2.99it/s]Train loss: 13.30377
+
+Epoch 22
+Val loss:   35.44754
+  0%|          | 23/6000 [00:08<32:55,  3.03it/s]Train loss: 9.30227
+
+Epoch 23
+Val loss:   5.57212
+  0%|          | 24/6000 [00:08<32:39,  3.05it/s]Train loss: 13.88187
+
+Epoch 24
+Val loss:   18.30710
+  0%|          | 25/6000 [00:09<32:40,  3.05it/s]Train loss: 11.53185
+
+Epoch 25
+Val loss:   4.68790
+  0%|          | 26/6000 [00:09<33:09,  3.00it/s]Train loss: 6.98884
+
+Epoch 26
+Val loss:   30.06896
+  0%|          | 27/6000 [00:09<33:12,  3.00it/s]Train loss: 9.38870
+
+Epoch 27
+Val loss:   4.55987
+  0%|          | 28/6000 [00:10<33:42,  2.95it/s]Train loss: 6.32125
+
+Epoch 28
+Val loss:   13.17465
+  0%|          | 29/6000 [00:10<33:13,  3.00it/s]Train loss: 7.15491
+
+Epoch 29
+Val loss:   18.75543
+  0%|          | 30/6000 [00:10<33:00,  3.01it/s]Train loss: 5.69242
+
+Epoch 30
+Val loss:   4.43927
+  1%|          | 31/6000 [00:11<33:25,  2.98it/s]Train loss: 9.71082
+
+Epoch 31
+Val loss:   24.89521
+  1%|          | 32/6000 [00:11<33:21,  2.98it/s]Train loss: 10.13995
+
+Epoch 32
+Val loss:   5.31090
+  1%|          | 33/6000 [00:11<33:02,  3.01it/s]Train loss: 7.70913
+
+Epoch 33
+Val loss:   13.86006
+  1%|          | 34/6000 [00:12<32:43,  3.04it/s]Train loss: 4.61311
+
+Epoch 34
+Val loss:   23.69019
+  1%|          | 35/6000 [00:12<32:20,  3.07it/s]Train loss: 6.38306
+
+Epoch 35
+Val loss:   23.76402
+  1%|          | 36/6000 [00:12<31:47,  3.13it/s]Train loss: 7.08771
+
+Epoch 36
+Val loss:   6.84257
+  1%|          | 37/6000 [00:13<31:58,  3.11it/s]Train loss: 6.17336
+
+Epoch 37
+Val loss:   2.45612
+  1%|          | 38/6000 [00:13<33:22,  2.98it/s]Train loss: 7.12716
+
+Epoch 38
+Val loss:   27.76218
+  1%|          | 39/6000 [00:13<33:17,  2.98it/s]Train loss: 7.25015
+
+Epoch 39
+Val loss:   3.52641
+  1%|          | 40/6000 [00:14<32:59,  3.01it/s]Train loss: 5.52881
+
+Epoch 40
+Val loss:   5.68187
+  1%|          | 41/6000 [00:14<32:37,  3.04it/s]Train loss: 6.83947
+
+Epoch 41
+Val loss:   2.52378
+  1%|          | 42/6000 [00:14<32:31,  3.05it/s]Train loss: 6.78095
+
+Epoch 42
+Val loss:   1.88924
+  1%|          | 43/6000 [00:15<33:03,  3.00it/s]Train loss: 5.96902
+
+Epoch 43
+Val loss:   23.47351
+  1%|          | 44/6000 [00:15<33:00,  3.01it/s]Train loss: 5.38836
+
+Epoch 44
+Val loss:   2.34430
+  1%|          | 45/6000 [00:15<33:01,  3.00it/s]Train loss: 5.66264
+
+Epoch 45
+Val loss:   2.14717
+  1%|          | 46/6000 [00:16<32:49,  3.02it/s]Train loss: 5.09016
+
+Epoch 46
+Val loss:   13.32134
+  1%|          | 47/6000 [00:16<32:38,  3.04it/s]Train loss: 4.39352
+
+Epoch 47
+Val loss:   3.39025
+  1%|          | 48/6000 [00:16<32:27,  3.06it/s]Train loss: 5.19092
+
+Epoch 48
+Val loss:   19.79088
+  1%|          | 49/6000 [00:17<32:18,  3.07it/s]Train loss: 7.60197
+
+Epoch 49
+Val loss:   18.45045
+  1%|          | 50/6000 [00:17<32:24,  3.06it/s]Train loss: 4.94406
+
+Epoch 50
+Val loss:   1.33105
+  1%|          | 51/6000 [00:17<33:12,  2.99it/s]Train loss: 5.18954
+
+Epoch 51
+Val loss:   1.56487
+  1%|          | 52/6000 [00:18<32:46,  3.02it/s]Train loss: 5.67073
+
+Epoch 52
+Val loss:   19.39879
+  1%|          | 53/6000 [00:18<32:58,  3.01it/s]Train loss: 9.59222
+
+Epoch 53
+Val loss:   3.92649
+  1%|          | 54/6000 [00:18<32:53,  3.01it/s]Train loss: 6.48736
+
+Epoch 54
+Val loss:   1.30364
+  1%|          | 55/6000 [00:19<33:04,  3.00it/s]Train loss: 5.00932
+
+Epoch 55
+Val loss:   18.62805
+  1%|          | 56/6000 [00:19<33:11,  2.98it/s]Train loss: 5.51060
+
+Epoch 56
+Val loss:   6.04927
+  1%|          | 57/6000 [00:19<33:07,  2.99it/s]Train loss: 5.63099
+
+Epoch 57
+Val loss:   3.08095
+  1%|          | 58/6000 [00:20<32:48,  3.02it/s]Train loss: 3.90620
+
+Epoch 58
+Val loss:   1.50425
+  1%|          | 59/6000 [00:20<32:53,  3.01it/s]Train loss: 6.26186
+
+Epoch 59
+Val loss:   2.00396
+  1%|          | 60/6000 [00:20<32:43,  3.03it/s]Train loss: 4.42102
+
+Epoch 60
+Val loss:   1.69709
+  1%|          | 61/6000 [00:21<32:38,  3.03it/s]Train loss: 11.85104
+
+Epoch 61
+Val loss:   19.27222
+  1%|          | 62/6000 [00:21<32:32,  3.04it/s]Train loss: 5.76632
+
+Epoch 62
+Val loss:   1.22943
+  1%|          | 63/6000 [00:21<32:57,  3.00it/s]Train loss: 7.41419
+
+Epoch 63
+Val loss:   1.44416
+  1%|          | 64/6000 [00:22<32:47,  3.02it/s]Train loss: 4.51514
+
+Epoch 64
+Val loss:   1.92084
+  1%|          | 65/6000 [00:22<32:40,  3.03it/s]Train loss: 5.50124
+
+Epoch 65
+Val loss:   5.30154
+  1%|          | 66/6000 [00:22<32:48,  3.01it/s]Train loss: 5.09130
+
+Epoch 66
+Val loss:   10.87224
+  1%|          | 67/6000 [00:23<32:46,  3.02it/s]Train loss: 5.80955
+
+Epoch 67
+Val loss:   1.59202
+  1%|          | 68/6000 [00:23<32:11,  3.07it/s]Train loss: 4.38572
+
+Epoch 68
+Val loss:   1.26091
+  1%|          | 69/6000 [00:23<32:03,  3.08it/s]Train loss: 4.18887
+
+Epoch 69
+Val loss:   5.57559
+  1%|          | 70/6000 [00:24<31:59,  3.09it/s]Train loss: 3.06326
+
+Epoch 70
+Val loss:   1.45765
+  1%|          | 71/6000 [00:24<31:55,  3.09it/s]Train loss: 5.14706
+
+Epoch 71
+Val loss:   7.10552
+  1%|          | 72/6000 [00:24<31:55,  3.09it/s]Train loss: 3.79693
+
+Epoch 72
+Val loss:   2.17248
+  1%|          | 73/6000 [00:25<31:56,  3.09it/s]Train loss: 3.53196
+
+Epoch 73
+Val loss:   15.54740
+  1%|          | 74/6000 [00:25<32:01,  3.08it/s]Train loss: 4.72035
+
+Epoch 74
+Val loss:   2.48056
+  1%|▏         | 75/6000 [00:25<31:56,  3.09it/s]Train loss: 4.45499
+
+Epoch 75
+Val loss:   12.64966
+  1%|▏         | 76/6000 [00:26<31:53,  3.10it/s]Train loss: 7.41609
+
+Epoch 76
+Val loss:   1.22346
+  1%|▏         | 77/6000 [00:26<32:05,  3.08it/s]Train loss: 4.27425
+
+Epoch 77
+Val loss:   7.32586
+  1%|▏         | 78/6000 [00:26<31:49,  3.10it/s]Train loss: 5.18696
+
+Epoch 78
+Val loss:   15.34456
+  1%|▏         | 79/6000 [00:26<31:55,  3.09it/s]Train loss: 10.93061
+
+Epoch 79
+Val loss:   5.56065
+  1%|▏         | 80/6000 [00:27<31:54,  3.09it/s]Train loss: 4.22726
+
+Epoch 80
+Val loss:   1.00631
+  1%|▏         | 81/6000 [00:27<32:15,  3.06it/s]Train loss: 3.56603
+
+Epoch 81
+Val loss:   16.71547
+  1%|▏         | 82/6000 [00:27<32:10,  3.07it/s]Train loss: 5.58025
+
+Epoch 82
+Val loss:   15.71011
+  1%|▏         | 83/6000 [00:28<31:56,  3.09it/s]Train loss: 4.95185
+
+Epoch 83
+Val loss:   17.16990
+  1%|▏         | 84/6000 [00:28<31:50,  3.10it/s]Train loss: 4.06831
+
+Epoch 84
+Val loss:   15.68030
+  1%|▏         | 85/6000 [00:28<31:28,  3.13it/s]Train loss: 5.09497
+
+Epoch 85
+Val loss:   11.12019
+  1%|▏         | 86/6000 [00:29<31:25,  3.14it/s]Train loss: 7.26226
+
+Epoch 86
+Val loss:   4.12986
+  1%|▏         | 87/6000 [00:29<31:09,  3.16it/s]Train loss: 3.23788
+
+Epoch 87
+Val loss:   10.22298
+  1%|▏         | 88/6000 [00:29<31:12,  3.16it/s]Train loss: 4.80238
+
+Epoch 88
+Val loss:   1.04655
+  1%|▏         | 89/6000 [00:30<31:49,  3.09it/s]Train loss: 4.41734
+
+Epoch 89
+Val loss:   12.68502
+  2%|▏         | 90/6000 [00:30<32:20,  3.04it/s]Train loss: 3.64130
+
+Epoch 90
+Val loss:   0.92515
+  2%|▏         | 91/6000 [00:30<33:01,  2.98it/s]Train loss: 4.95464
+
+Epoch 91
+Val loss:   15.15061
+  2%|▏         | 92/6000 [00:31<32:56,  2.99it/s]Train loss: 4.23674
+
+Epoch 92
+Val loss:   9.70557
+  2%|▏         | 93/6000 [00:31<32:37,  3.02it/s]Train loss: 4.74970
+
+Epoch 93
+Val loss:   1.16364
+  2%|▏         | 94/6000 [00:31<32:28,  3.03it/s]Train loss: 4.70635
+
+Epoch 94
+Val loss:   1.92565
+  2%|▏         | 95/6000 [00:32<32:31,  3.03it/s]Train loss: 4.18218
+
+Epoch 95
+Val loss:   6.78546
+  2%|▏         | 96/6000 [00:32<32:40,  3.01it/s]Train loss: 5.54598
+
+Epoch 96
+Val loss:   1.00123
+  2%|▏         | 97/6000 [00:32<32:10,  3.06it/s]Train loss: 3.88453
+
+Epoch 97
+Val loss:   0.97402
+  2%|▏         | 98/6000 [00:33<32:17,  3.05it/s]Train loss: 4.39102
+
+Epoch 98
+Val loss:   1.22129
+  2%|▏         | 99/6000 [00:33<32:37,  3.01it/s]Train loss: 3.55195
+
+Epoch 99
+Val loss:   0.90435
+  2%|▏         | 100/6000 [00:33<32:59,  2.98it/s]Train loss: 3.47996
+
+Epoch 100
+Val loss:   11.79160
+  2%|▏         | 101/6000 [00:34<32:47,  3.00it/s]Train loss: 3.20057
+
+Epoch 101
+Val loss:   1.39043
+  2%|▏         | 102/6000 [00:34<32:32,  3.02it/s]Train loss: 5.04694
+
+Epoch 102
+Val loss:   1.38023
+  2%|▏         | 103/6000 [00:34<32:35,  3.01it/s]Train loss: 5.46942
+
+Epoch 103
+Val loss:   0.95309
+  2%|▏         | 104/6000 [00:35<32:34,  3.02it/s]Train loss: 3.82150
+
+Epoch 104
+Val loss:   7.91648
+  2%|▏         | 105/6000 [00:35<32:40,  3.01it/s]Train loss: 3.11471
+
+Epoch 105
+Val loss:   1.03367
+  2%|▏         | 106/6000 [00:35<32:47,  3.00it/s]Train loss: 4.66769
+
+Epoch 106
+Val loss:   14.96554
+  2%|▏         | 107/6000 [00:36<32:42,  3.00it/s]Train loss: 5.60156
+
+Epoch 107
+Val loss:   1.45635
+  2%|▏         | 108/6000 [00:36<32:36,  3.01it/s]Train loss: 4.10976
+
+Epoch 108
+Val loss:   1.30899
+  2%|▏         | 109/6000 [00:36<32:22,  3.03it/s]Train loss: 2.82338
+
+Epoch 109
+Val loss:   8.43751
+  2%|▏         | 110/6000 [00:37<32:22,  3.03it/s]Train loss: 4.93139
+
+Epoch 110
+Val loss:   14.99969
+  2%|▏         | 111/6000 [00:37<32:26,  3.03it/s]Train loss: 3.97586
+
+Epoch 111
+Val loss:   15.55949
+  2%|▏         | 112/6000 [00:37<32:28,  3.02it/s]Train loss: 5.21610
+
+Epoch 112
+Val loss:   1.20912
+  2%|▏         | 113/6000 [00:38<32:27,  3.02it/s]Train loss: 5.29921
+
+Epoch 113
+Val loss:   15.43719
+  2%|▏         | 114/6000 [00:38<32:31,  3.02it/s]Train loss: 4.28872
+
+Epoch 114
+Val loss:   16.74627
+  2%|▏         | 115/6000 [00:38<32:31,  3.02it/s]Train loss: 4.66516
+
+Epoch 115
+Val loss:   0.80623
+  2%|▏         | 116/6000 [00:39<32:51,  2.98it/s]Train loss: 3.65166
+
+Epoch 116
+Val loss:   0.90962
+  2%|▏         | 117/6000 [00:39<32:33,  3.01it/s]Train loss: 4.63183
+
+Epoch 117
+Val loss:   3.78993
+  2%|▏         | 118/6000 [00:39<31:59,  3.06it/s]Train loss: 3.88450
+
+Epoch 118
+Val loss:   7.47051
+  2%|▏         | 119/6000 [00:40<32:07,  3.05it/s]Train loss: 3.80805
+
+Epoch 119
+Val loss:   9.39854
+  2%|▏         | 120/6000 [00:40<32:18,  3.03it/s]Train loss: 4.35728
+
+Epoch 120
+Val loss:   0.75757
+  2%|▏         | 121/6000 [00:40<32:35,  3.01it/s]Train loss: 4.51649
+
+Epoch 121
+Val loss:   1.21609
+  2%|▏         | 122/6000 [00:41<32:15,  3.04it/s]Train loss: 5.15971
+
+Epoch 122
+Val loss:   2.74276
+  2%|▏         | 123/6000 [00:41<32:10,  3.04it/s]Train loss: 3.38984
+
+Epoch 123
+Val loss:   11.20039
+  2%|▏         | 124/6000 [00:41<32:03,  3.05it/s]Train loss: 3.87375
+
+Epoch 124
+Val loss:   3.27708
+  2%|▏         | 125/6000 [00:42<32:08,  3.05it/s]Train loss: 5.28699
+
+Epoch 125
+Val loss:   10.71303
+  2%|▏         | 126/6000 [00:42<31:57,  3.06it/s]Train loss: 4.13917
+
+Epoch 126
+Val loss:   13.49454
+  2%|▏         | 127/6000 [00:42<31:47,  3.08it/s]Train loss: 3.90527
+
+Epoch 127
+Val loss:   4.75333
+  2%|▏         | 128/6000 [00:43<31:38,  3.09it/s]Train loss: 4.81164
+
+Epoch 128
+Val loss:   2.12244
+  2%|▏         | 129/6000 [00:43<31:36,  3.10it/s]Train loss: 4.92176
+
+Epoch 129
+Val loss:   4.45121
+  2%|▏         | 130/6000 [00:43<31:35,  3.10it/s]Train loss: 5.11315
+
+Epoch 130
+Val loss:   8.19971
+  2%|▏         | 131/6000 [00:44<31:52,  3.07it/s]Train loss: 4.59019
+
+Epoch 131
+Val loss:   1.19971
+  2%|▏         | 132/6000 [00:44<31:42,  3.08it/s]Train loss: 5.02492
+
+Epoch 132
+Val loss:   0.82260
+  2%|▏         | 133/6000 [00:44<31:41,  3.08it/s]Train loss: 2.78236
+
+Epoch 133
+Val loss:   6.43163
+  2%|▏         | 134/6000 [00:45<31:41,  3.09it/s]Train loss: 4.04234
+
+Epoch 134
+Val loss:   14.13288
+  2%|▏         | 135/6000 [00:45<31:51,  3.07it/s]Train loss: 4.93209
+
+Epoch 135
+Val loss:   7.51773
+  2%|▏         | 136/6000 [00:45<31:37,  3.09it/s]Train loss: 3.69923
+
+Epoch 136
+Val loss:   0.83630
+  2%|▏         | 137/6000 [00:46<31:43,  3.08it/s]Train loss: 3.55904
+
+Epoch 137
+Val loss:   6.52894
+  2%|▏         | 138/6000 [00:46<31:32,  3.10it/s]Train loss: 5.92476
+
+Epoch 138
+Val loss:   7.18992
+  2%|▏         | 139/6000 [00:46<31:35,  3.09it/s]Train loss: 4.67165
+
+Epoch 139
+Val loss:   13.31517
+  2%|▏         | 140/6000 [00:46<31:28,  3.10it/s]Train loss: 3.32163
+
+Epoch 140
+Val loss:   0.77351
+  2%|▏         | 141/6000 [00:47<31:33,  3.09it/s]Train loss: 3.77160
+
+Epoch 141
+Val loss:   0.71053
+  2%|▏         | 142/6000 [00:47<32:11,  3.03it/s]Train loss: 3.48995
+
+Epoch 142
+Val loss:   6.44777
+  2%|▏         | 143/6000 [00:47<31:59,  3.05it/s]Train loss: 4.16561
+
+Epoch 143
+Val loss:   0.93005
+  2%|▏         | 144/6000 [00:48<32:11,  3.03it/s]Train loss: 5.48372
+
+Epoch 144
+Val loss:   1.18777
+  2%|▏         | 145/6000 [00:48<32:01,  3.05it/s]Train loss: 4.17665
+
+Epoch 145
+Val loss:   6.13080
+  2%|▏         | 146/6000 [00:48<31:54,  3.06it/s]Train loss: 4.46765
+
+Epoch 146
+Val loss:   1.02040
+  2%|▏         | 147/6000 [00:49<31:58,  3.05it/s]Train loss: 4.19208
+
+Epoch 147
+Val loss:   4.48302
+  2%|▏         | 148/6000 [00:49<32:18,  3.02it/s]Train loss: 6.31342
+
+Epoch 148
+Val loss:   5.79510
+  2%|▏         | 149/6000 [00:49<32:06,  3.04it/s]Train loss: 3.62908
+
+Epoch 149
+Val loss:   7.49832
+  2%|▎         | 150/6000 [00:50<31:58,  3.05it/s]Train loss: 3.40940
+
+Epoch 150
+Val loss:   7.32233
+  3%|▎         | 151/6000 [00:50<31:51,  3.06it/s]Train loss: 3.44761
+
+Epoch 151
+Val loss:   2.90670
+  3%|▎         | 152/6000 [00:50<31:37,  3.08it/s]Train loss: 4.30349
+
+Epoch 152
+Val loss:   15.13057
+  3%|▎         | 153/6000 [00:51<31:49,  3.06it/s]Train loss: 3.91318
+
+Epoch 153
+Val loss:   3.16994
+  3%|▎         | 154/6000 [00:51<31:47,  3.07it/s]Train loss: 3.89721
+
+Epoch 154
+Val loss:   1.48972
+  3%|▎         | 155/6000 [00:51<31:47,  3.06it/s]Train loss: 3.26747
+
+Epoch 155
+Val loss:   1.19408
+  3%|▎         | 156/6000 [00:52<31:42,  3.07it/s]Train loss: 2.90472
+
+Epoch 156
+Val loss:   1.08206
+  3%|▎         | 157/6000 [00:52<31:24,  3.10it/s]Train loss: 3.85167
+
+Epoch 157
+Val loss:   1.01061
+  3%|▎         | 158/6000 [00:52<31:39,  3.08it/s]Train loss: 2.87643
+
+Epoch 158
+Val loss:   1.09271
+  3%|▎         | 159/6000 [00:53<31:59,  3.04it/s]Train loss: 3.83525
+
+Epoch 159
+Val loss:   15.32670
+  3%|▎         | 160/6000 [00:53<32:10,  3.02it/s]Train loss: 3.69329
+
+Epoch 160
+Val loss:   12.90786
+  3%|▎         | 161/6000 [00:53<31:41,  3.07it/s]Train loss: 3.86204
+
+Epoch 161
+Val loss:   0.76412
+  3%|▎         | 162/6000 [00:54<31:44,  3.07it/s]Train loss: 3.44948
+
+Epoch 162
+Val loss:   0.98530
+  3%|▎         | 163/6000 [00:54<31:38,  3.07it/s]Train loss: 3.54675
+
+Epoch 163
+Val loss:   5.83875
+  3%|▎         | 164/6000 [00:54<31:52,  3.05it/s]Train loss: 3.20666
+
+Epoch 164
+Val loss:   9.73982
+  3%|▎         | 165/6000 [00:55<31:54,  3.05it/s]Train loss: 3.88994
+
+Epoch 165
+Val loss:   0.69194
+  3%|▎         | 166/6000 [00:55<32:29,  2.99it/s]Train loss: 4.42014
+
+Epoch 166
+Val loss:   0.68752
+  3%|▎         | 167/6000 [00:55<33:02,  2.94it/s]Train loss: 2.96516
+
+Epoch 167
+Val loss:   0.78600
+  3%|▎         | 168/6000 [00:56<32:32,  2.99it/s]Train loss: 4.58285
+
+Epoch 168
+Val loss:   0.87762
+Terminated
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 79, in <module>
+    main()
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 45, in main
+    run(
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 11, in run
+    subprocess.run(cmd, cwd=str(cwd), check=True)
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash', '/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/train_act_20251230_141520.sh', 'beat_block_hammer', 'smoke_act__r20251230_141520', '2', '0', '0']' returned non-zero exit status 143.

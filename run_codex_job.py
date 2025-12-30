@@ -56,6 +56,7 @@ USER_REQUIREMENTS = r"""
 - 默认任务：beat_block_hammer（除非用户另有要求）
 - 关键要求：数据采集/任务配置中启用光照相关的域随机化（例如 domain_randomization.random_light=true）
 - 其余配置保持默认（除非为满足该目标必须调整）
+- 现在也许gpu5 有空，你可以观察下，需要gpu的时候用gpu5 来跑这个实验
 
 English summary:
 Build a policy that generalizes to lighting changes.
