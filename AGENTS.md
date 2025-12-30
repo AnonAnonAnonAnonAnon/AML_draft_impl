@@ -43,7 +43,7 @@ Example: if the original flow is c.sh -> a.py, create b.py (copied from a.py and
 
 ---
 
-## 2. RUN Protocol (Required)
+## 2. RUN Protocol (Recommended Approach)
 At the start of each run, generate a RUNID:
 - Format: `YYYYMMDD_HHMMSS` (UTC+8)
 - Use RUNID in names of all new files you create, e.g. `*_RUNID.*` or `*__rRUNID.*`
@@ -71,6 +71,26 @@ Each cache file should include:
 - Links + short notes
 - What problem it solved / which error message it relates to
 - Any concrete command/config snippet you applied
+
+### 2.3 About Environment and Download
+
+Please note that the environment has already been largely set up and can run the full RoboTwin 2.0 end-to-end pipeline for both ACT and DP.
+
+Therefore, in most cases, you likely do not need to re-download all environments and assets exactly as described in the RoboTwin 2.0 documentation.
+
+You can try running with my existing environment first.
+
+The current environment is the conda environment `aml`.
+
+To activate it:
+
+```bash
+conda activate aml
+```
+
+Generally speaking, before asking you to work, I will activate the environment first. You can proceed directly.
+
+
 
 ---
 

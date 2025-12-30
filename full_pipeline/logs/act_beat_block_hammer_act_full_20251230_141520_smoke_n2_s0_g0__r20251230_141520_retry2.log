@@ -1,0 +1,3 @@
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl)
+  bash collect_data__r20251230_141520.sh beat_block_hammer act_full_20251230_141520_smoke 0
