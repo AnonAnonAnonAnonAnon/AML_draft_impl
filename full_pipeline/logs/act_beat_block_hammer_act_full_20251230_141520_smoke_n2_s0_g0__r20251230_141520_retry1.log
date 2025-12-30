@@ -1,0 +1,22 @@
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl)
+  bash collect_data__r20251230_141520.sh beat_block_hammer act_full_20251230_141520_smoke 0
+[32mRender Well[0m
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/script/collect_data.py", line 250, in <module>
+    main(task_name=task_name, task_config=task_config)
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/script/collect_data.py", line 73, in main
+    args["left_embodiment_config"] = get_embodiment_config(args["left_robot_file"])
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/script/collect_data.py", line 34, in get_embodiment_config
+    with open(robot_config_file, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './assets/embodiments/aloha-agilex/config.yml'
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 79, in <module>
+    main()
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 29, in main
+    run(["bash", f"collect_data__r20251230_141520.sh", args.task_name, args.task_config, args.gpu_id], cwd=repo_root)
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 11, in run
+    subprocess.run(cmd, cwd=str(cwd), check=True)
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash', 'collect_data__r20251230_141520.sh', 'beat_block_hammer', 'act_full_20251230_141520_smoke', '0']' returned non-zero exit status 1.

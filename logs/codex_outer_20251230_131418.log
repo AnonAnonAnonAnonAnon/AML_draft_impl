@@ -1,0 +1,14 @@
+[RUNID] 20251230_131418
+[CWD] /mnt/data/chenyiteng_datas/AML/AML_draft_impl
+[CODEX_HOME] /mnt/data/chenyiteng_datas/AML/AML_draft_impl/.codex_uiui
+[CMD] npx codex exec --cd /mnt/data/chenyiteng_datas/AML/AML_draft_impl --search --dangerously-bypass-approvals-and-sandbox <PROMPT_OMITTED>
+
+
+[PID] 3270210
+error: unexpected argument '--search' found
+
+  tip: to pass '--search' as a value, use '-- --search'
+
+Usage: codex exec --cd <DIR> [PROMPT]
+
+For more information, try '--help'.

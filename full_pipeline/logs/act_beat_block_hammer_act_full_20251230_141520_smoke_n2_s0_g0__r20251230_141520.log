@@ -1,0 +1,25 @@
+
+[RUN] (cwd=/mnt/data/chenyiteng_datas/AML/AML_draft_impl)
+  bash collect_data__r20251230_141520.sh beat_block_hammer act_full_20251230_141520_smoke 0
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/script/collect_data.py", line 9, in <module>
+    from envs import *
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/./envs/__init__.py", line 1, in <module>
+    from .utils import *
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/./envs/utils/__init__.py", line 5, in <module>
+    from .rand_create_cluttered_actor import *
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/./envs/utils/rand_create_cluttered_actor.py", line 90, in <module>
+    cluttered_objects_info, cluttered_objects_list, same_obj = get_all_cluttered_objects()
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/./envs/utils/rand_create_cluttered_actor.py", line 17, in get_all_cluttered_objects
+    cluttered_objects_config = json.load(open(Path("./assets/objects/objaverse/list.json"), "r", encoding="utf-8"))
+FileNotFoundError: [Errno 2] No such file or directory: 'assets/objects/objaverse/list.json'
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 79, in <module>
+    main()
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 29, in main
+    run(["bash", f"collect_data__r20251230_141520.sh", args.task_name, args.task_config, args.gpu_id], cwd=repo_root)
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/full_pipeline/runs/act_20251230_141520/run_robotwin_act_20251230_141520.py", line 11, in run
+    subprocess.run(cmd, cwd=str(cwd), check=True)
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash', 'collect_data__r20251230_141520.sh', 'beat_block_hammer', 'act_full_20251230_141520_smoke', '0']' returned non-zero exit status 1.
