@@ -243,7 +243,7 @@ AGENTS.md
 docs/
 
 ```bash
-python run_codex_job.py
+nohup python run_codex_job.py > logs/driver_nohup.log 2>&1 & echo $! > logs/driver_nohup.pid
 ```
 
 Log in: logs/
