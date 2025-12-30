@@ -1,0 +1,77 @@
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+Data from: ./processed_data/sim-beat_block_hammer/act_full_20251230_145014-50
+
+build_ACT_model_and_optimizer Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/act_full_20251230_145014-50', policy_class='ACT', task_name='sim-beat_block_hammer-act_full_20251230_145014-50', seed=0, num_epochs=120, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=20, num_queries=50)
+Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/act_full_20251230_145014-50', policy_class='ACT', task_name='sim-beat_block_hammer-act_full_20251230_145014-50', seed=0, num_epochs=120, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=20, num_queries=50)
+number of parameters: 83.90M
+KL Weight 10
+  0%|          | 0/120 [00:00<?, ?it/s]
+Epoch 0
+Val loss:   81.69691
+  1%|          | 1/120 [00:03<06:35,  3.32s/it]Train loss: 57.86392
+
+Epoch 1
+Val loss:   28.12119
+  2%|▏         | 2/120 [00:05<05:01,  2.56s/it]Train loss: 23.45384
+
+Epoch 2
+Val loss:   12.13047
+  2%|▎         | 3/120 [00:07<04:38,  2.38s/it]Train loss: 13.13549
+
+Epoch 3
+Val loss:   5.94619
+  3%|▎         | 4/120 [00:09<04:22,  2.26s/it]Train loss: 10.88606
+
+Epoch 4
+Val loss:   6.32996
+  4%|▍         | 5/120 [00:11<04:11,  2.18s/it]Train loss: 8.72668
+
+Epoch 5
+Val loss:   4.14124
+  5%|▌         | 6/120 [00:13<04:09,  2.19s/it]Train loss: 7.23332
+
+Epoch 6
+Val loss:   3.20244
+  6%|▌         | 7/120 [00:16<04:11,  2.22s/it]Train loss: 6.05445
+
+Epoch 7
+Val loss:   2.54736
+  7%|▋         | 8/120 [00:18<04:14,  2.27s/it]Train loss: 5.75000
+
+Epoch 8
+Val loss:   2.40861
+  8%|▊         | 9/120 [00:20<04:15,  2.30s/it]Train loss: 5.59938
+
+Epoch 9
+Val loss:   1.52515
+  8%|▊         | 10/120 [00:23<04:16,  2.33s/it]Train loss: 5.36476
+
+Epoch 10
+Val loss:   1.38494
+  9%|▉         | 11/120 [00:25<04:09,  2.29s/it]Train loss: 4.60736
+
+Epoch 11
+Val loss:   1.58526
+ 10%|█         | 12/120 [00:27<04:04,  2.27s/it]Train loss: 4.49158
+
+Epoch 12
+Val loss:   0.87738
+ 10%|█         | 12/120 [00:28<04:18,  2.39s/it]
+Traceback (most recent call last):
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/policy/ACT/imitate_episodes.py", line 491, in <module>
+    main(vars(parser.parse_args()))
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/policy/ACT/imitate_episodes.py", line 132, in main
+    best_ckpt_info = train_bc(train_dataloader, val_dataloader, config)
+  File "/mnt/data/chenyiteng_datas/AML/AML_draft_impl/policy/ACT/imitate_episodes.py", line 403, in train_bc
+    loss.backward()
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torch/_tensor.py", line 521, in backward
+    torch.autograd.backward(
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torch/autograd/__init__.py", line 289, in backward
+    _engine_run_backward(
+  File "/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torch/autograd/graph.py", line 769, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 200.00 MiB. GPU 0 has a total capacity of 23.52 GiB of which 88.56 MiB is free. Process 3354630 has 7.90 GiB memory in use. Process 3358696 has 7.90 GiB memory in use. Including non-PyTorch memory, this process has 7.62 GiB memory in use. Of the allocated memory 6.17 GiB is allocated by PyTorch, and 1002.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

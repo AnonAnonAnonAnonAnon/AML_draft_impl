@@ -1,0 +1,393 @@
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/liwenbo/anaconda3/envs/aml/lib/python3.10/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+Data from: ./processed_data/sim-beat_block_hammer/act_full_20251230_145014-50
+
+build_ACT_model_and_optimizer Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/act_full_20251230_145014-50', policy_class='ACT', task_name='sim-beat_block_hammer-act_full_20251230_145014-50', seed=0, num_epochs=500, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=100, num_queries=50)
+Namespace(lr=1e-05, lr_backbone=1e-05, batch_size=8, weight_decay=0.0001, epochs=300, lr_drop=200, clip_max_norm=0.1, backbone='resnet18', dilation=False, position_embedding='sine', camera_names=['cam_high', 'cam_right_wrist', 'cam_left_wrist'], enc_layers=4, dec_layers=7, dim_feedforward=3200, hidden_dim=512, dropout=0.1, nheads=8, pre_norm=False, masks=False, eval=False, onscreen_render=False, ckpt_dir='./act_ckpt/act-beat_block_hammer/act_full_20251230_145014-50', policy_class='ACT', task_name='sim-beat_block_hammer-act_full_20251230_145014-50', seed=0, num_epochs=500, kl_weight=10, chunk_size=50, temporal_agg=False, state_dim=14, save_freq=100, num_queries=50)
+number of parameters: 83.90M
+KL Weight 10
+  0%|          | 0/500 [00:00<?, ?it/s]
+Epoch 0
+Val loss:   81.69691
+  0%|          | 1/500 [00:02<22:47,  2.74s/it]Train loss: 57.86393
+
+Epoch 1
+Val loss:   28.12120
+  0%|          | 2/500 [00:04<18:33,  2.24s/it]Train loss: 23.45384
+
+Epoch 2
+Val loss:   12.13051
+  1%|          | 3/500 [00:06<17:11,  2.07s/it]Train loss: 13.13551
+
+Epoch 3
+Val loss:   5.94622
+  1%|          | 4/500 [00:08<16:28,  1.99s/it]Train loss: 10.88608
+
+Epoch 4
+Val loss:   6.32998
+  1%|          | 5/500 [00:10<16:06,  1.95s/it]Train loss: 8.72667
+
+Epoch 5
+Val loss:   4.14111
+  1%|          | 6/500 [00:12<15:59,  1.94s/it]Train loss: 7.23327
+
+Epoch 6
+Val loss:   3.20257
+  1%|▏         | 7/500 [00:14<16:03,  1.95s/it]Train loss: 6.05434
+
+Epoch 7
+Val loss:   2.54695
+  2%|▏         | 8/500 [00:16<16:03,  1.96s/it]Train loss: 5.75002
+
+Epoch 8
+Val loss:   2.40895
+  2%|▏         | 9/500 [00:17<15:48,  1.93s/it]Train loss: 5.59928
+
+Epoch 9
+Val loss:   1.52439
+  2%|▏         | 10/500 [00:19<15:39,  1.92s/it]Train loss: 5.36460
+
+Epoch 10
+Val loss:   1.38483
+  2%|▏         | 11/500 [00:21<15:30,  1.90s/it]Train loss: 4.60737
+
+Epoch 11
+Val loss:   1.58687
+  2%|▏         | 12/500 [00:23<15:23,  1.89s/it]Train loss: 4.49247
+
+Epoch 12
+Val loss:   0.87772
+  3%|▎         | 13/500 [00:25<15:26,  1.90s/it]Train loss: 4.66814
+
+Epoch 13
+Val loss:   1.17672
+  3%|▎         | 14/500 [00:27<15:36,  1.93s/it]Train loss: 4.33902
+
+Epoch 14
+Val loss:   1.21716
+  3%|▎         | 15/500 [00:29<15:32,  1.92s/it]Train loss: 4.13018
+
+Epoch 15
+Val loss:   1.17847
+  3%|▎         | 16/500 [00:31<15:26,  1.91s/it]Train loss: 3.99744
+
+Epoch 16
+Val loss:   1.08628
+  3%|▎         | 17/500 [00:33<15:17,  1.90s/it]Train loss: 4.20397
+
+Epoch 17
+Val loss:   1.11905
+  4%|▎         | 18/500 [00:35<15:12,  1.89s/it]Train loss: 4.17329
+
+Epoch 18
+Val loss:   1.05014
+  4%|▍         | 19/500 [00:36<15:10,  1.89s/it]Train loss: 4.23545
+
+Epoch 19
+Val loss:   0.61057
+  4%|▍         | 20/500 [00:38<15:09,  1.89s/it]Train loss: 3.79821
+
+Epoch 20
+Val loss:   0.77198
+  4%|▍         | 21/500 [00:40<15:08,  1.90s/it]Train loss: 4.27378
+
+Epoch 21
+Val loss:   0.70738
+  4%|▍         | 22/500 [00:42<15:06,  1.90s/it]Train loss: 3.69592
+
+Epoch 22
+Val loss:   0.96087
+  5%|▍         | 23/500 [00:44<15:17,  1.92s/it]Train loss: 3.78427
+
+Epoch 23
+Val loss:   0.68263
+  5%|▍         | 24/500 [00:46<15:30,  1.95s/it]Train loss: 3.50632
+
+Epoch 24
+Val loss:   0.58322
+  5%|▌         | 25/500 [00:48<15:36,  1.97s/it]Train loss: 3.73218
+
+Epoch 25
+Val loss:   0.71426
+  5%|▌         | 26/500 [00:50<15:40,  1.98s/it]Train loss: 3.61457
+
+Epoch 26
+Val loss:   0.77630
+  5%|▌         | 27/500 [00:52<15:38,  1.98s/it]Train loss: 3.93676
+
+Epoch 27
+Val loss:   0.62721
+  6%|▌         | 28/500 [00:54<15:35,  1.98s/it]Train loss: 3.65204
+
+Epoch 28
+Val loss:   0.77462
+  6%|▌         | 29/500 [00:56<15:36,  1.99s/it]Train loss: 3.57528
+
+Epoch 29
+Val loss:   0.62377
+  6%|▌         | 30/500 [00:58<15:26,  1.97s/it]Train loss: 3.59046
+
+Epoch 30
+Val loss:   0.77589
+  6%|▌         | 31/500 [01:00<15:12,  1.95s/it]Train loss: 3.51293
+
+Epoch 31
+Val loss:   0.62574
+  6%|▋         | 32/500 [01:02<15:08,  1.94s/it]Train loss: 3.43834
+
+Epoch 32
+Val loss:   0.50101
+  7%|▋         | 33/500 [01:04<15:13,  1.96s/it]Train loss: 3.48211
+
+Epoch 33
+Val loss:   0.68962
+  7%|▋         | 34/500 [01:06<14:57,  1.93s/it]Train loss: 3.43745
+
+Epoch 34
+Val loss:   0.43674
+  7%|▋         | 35/500 [01:08<14:54,  1.92s/it]Train loss: 3.48674
+
+Epoch 35
+Val loss:   0.66393
+  7%|▋         | 36/500 [01:10<14:50,  1.92s/it]Train loss: 3.43831
+
+Epoch 36
+Val loss:   0.73721
+  7%|▋         | 37/500 [01:11<14:47,  1.92s/it]Train loss: 3.41297
+
+Epoch 37
+Val loss:   0.60151
+  8%|▊         | 38/500 [01:13<14:44,  1.91s/it]Train loss: 3.44111
+
+Epoch 38
+Val loss:   0.54757
+  8%|▊         | 39/500 [01:15<14:36,  1.90s/it]Train loss: 3.46258
+
+Epoch 39
+Val loss:   0.61281
+  8%|▊         | 40/500 [01:17<14:31,  1.89s/it]Train loss: 3.28141
+
+Epoch 40
+Val loss:   0.47627
+  8%|▊         | 41/500 [01:19<14:28,  1.89s/it]Train loss: 3.13206
+
+Epoch 41
+Val loss:   0.64349
+  8%|▊         | 42/500 [01:21<14:30,  1.90s/it]Train loss: 3.23155
+
+Epoch 42
+Val loss:   0.59132
+  9%|▊         | 43/500 [01:23<14:27,  1.90s/it]Train loss: 3.28900
+
+Epoch 43
+Val loss:   0.41703
+  9%|▉         | 44/500 [01:25<14:34,  1.92s/it]Train loss: 3.32305
+
+Epoch 44
+Val loss:   0.43275
+  9%|▉         | 45/500 [01:27<14:30,  1.91s/it]Train loss: 3.31042
+
+Epoch 45
+Val loss:   0.70078
+  9%|▉         | 46/500 [01:29<14:35,  1.93s/it]Train loss: 3.28175
+
+Epoch 46
+Val loss:   0.54576
+  9%|▉         | 47/500 [01:31<14:39,  1.94s/it]Train loss: 3.29071
+
+Epoch 47
+Val loss:   0.77716
+ 10%|▉         | 48/500 [01:33<14:37,  1.94s/it]Train loss: 3.26033
+
+Epoch 48
+Val loss:   0.48140
+ 10%|▉         | 49/500 [01:34<14:20,  1.91s/it]Train loss: 2.86384
+
+Epoch 49
+Val loss:   0.63257
+ 10%|█         | 50/500 [01:36<14:16,  1.90s/it]Train loss: 3.25079
+
+Epoch 50
+Val loss:   0.71885
+ 10%|█         | 51/500 [01:38<14:07,  1.89s/it]Train loss: 3.05165
+
+Epoch 51
+Val loss:   1.06127
+ 10%|█         | 52/500 [01:40<13:58,  1.87s/it]Train loss: 3.24470
+
+Epoch 52
+Val loss:   0.64100
+ 11%|█         | 53/500 [01:42<13:50,  1.86s/it]Train loss: 3.00072
+
+Epoch 53
+Val loss:   0.32205
+ 11%|█         | 54/500 [01:44<13:39,  1.84s/it]Train loss: 2.97431
+
+Epoch 54
+Val loss:   0.48783
+ 11%|█         | 55/500 [01:45<13:26,  1.81s/it]Train loss: 3.41813
+
+Epoch 55
+Val loss:   0.42207
+ 11%|█         | 56/500 [01:47<13:09,  1.78s/it]Train loss: 3.19443
+
+Epoch 56
+Val loss:   0.54399
+ 11%|█▏        | 57/500 [01:49<12:59,  1.76s/it]Train loss: 3.02662
+
+Epoch 57
+Val loss:   0.52449
+ 12%|█▏        | 58/500 [01:51<13:05,  1.78s/it]Train loss: 3.06800
+
+Epoch 58
+Val loss:   0.47612
+ 12%|█▏        | 59/500 [01:52<13:10,  1.79s/it]Train loss: 3.05225
+
+Epoch 59
+Val loss:   0.34597
+ 12%|█▏        | 60/500 [01:54<13:20,  1.82s/it]Train loss: 2.89196
+
+Epoch 60
+Val loss:   0.44679
+ 12%|█▏        | 61/500 [01:56<13:41,  1.87s/it]Train loss: 2.99787
+
+Epoch 61
+Val loss:   0.44866
+ 12%|█▏        | 62/500 [01:58<14:10,  1.94s/it]Train loss: 2.98042
+
+Epoch 62
+Val loss:   0.46209
+ 13%|█▎        | 63/500 [02:01<15:03,  2.07s/it]Train loss: 2.88828
+
+Epoch 63
+Val loss:   0.48205
+ 13%|█▎        | 64/500 [02:03<15:25,  2.12s/it]Train loss: 3.07917
+
+Epoch 64
+Val loss:   0.44206
+ 13%|█▎        | 65/500 [02:05<15:41,  2.16s/it]Train loss: 3.11227
+
+Epoch 65
+Val loss:   0.54234
+ 13%|█▎        | 66/500 [02:08<15:56,  2.20s/it]Train loss: 2.91001
+
+Epoch 66
+Val loss:   0.61641
+ 13%|█▎        | 67/500 [02:10<16:06,  2.23s/it]Train loss: 3.04227
+
+Epoch 67
+Val loss:   0.57614
+ 14%|█▎        | 68/500 [02:12<16:20,  2.27s/it]Train loss: 2.91373
+
+Epoch 68
+Val loss:   0.43268
+ 14%|█▍        | 69/500 [02:14<16:13,  2.26s/it]Train loss: 2.86539
+
+Epoch 69
+Val loss:   0.40310
+ 14%|█▍        | 70/500 [02:17<15:54,  2.22s/it]Train loss: 3.07804
+
+Epoch 70
+Val loss:   0.60622
+ 14%|█▍        | 71/500 [02:19<15:21,  2.15s/it]Train loss: 2.73880
+
+Epoch 71
+Val loss:   0.59720
+ 14%|█▍        | 72/500 [02:21<14:57,  2.10s/it]Train loss: 2.86686
+
+Epoch 72
+Val loss:   0.49518
+ 15%|█▍        | 73/500 [02:23<14:57,  2.10s/it]Train loss: 2.82097
+
+Epoch 73
+Val loss:   0.41778
+ 15%|█▍        | 74/500 [02:25<14:55,  2.10s/it]Train loss: 2.88887
+
+Epoch 74
+Val loss:   0.46343
+ 15%|█▌        | 75/500 [02:27<14:10,  2.00s/it]Train loss: 2.94194
+
+Epoch 75
+Val loss:   0.44753
+ 15%|█▌        | 76/500 [02:28<13:40,  1.94s/it]Train loss: 2.84811
+
+Epoch 76
+Val loss:   0.43545
+ 15%|█▌        | 77/500 [02:30<13:24,  1.90s/it]Train loss: 2.91368
+
+Epoch 77
+Val loss:   0.46682
+ 16%|█▌        | 78/500 [02:32<13:16,  1.89s/it]Train loss: 2.87226
+
+Epoch 78
+Val loss:   0.40211
+ 16%|█▌        | 79/500 [02:34<13:10,  1.88s/it]Train loss: 2.79218
+
+Epoch 79
+Val loss:   0.42791
+ 16%|█▌        | 80/500 [02:36<13:13,  1.89s/it]Train loss: 2.82316
+
+Epoch 80
+Val loss:   0.43409
+ 16%|█▌        | 81/500 [02:38<13:13,  1.89s/it]Train loss: 2.86615
+
+Epoch 81
+Val loss:   0.50115
+ 16%|█▋        | 82/500 [02:40<13:14,  1.90s/it]Train loss: 2.81668
+
+Epoch 82
+Val loss:   0.46288
+ 17%|█▋        | 83/500 [02:41<13:12,  1.90s/it]Train loss: 2.82561
+
+Epoch 83
+Val loss:   0.49497
+ 17%|█▋        | 84/500 [02:43<13:04,  1.89s/it]Train loss: 2.65812
+
+Epoch 84
+Val loss:   0.41818
+ 17%|█▋        | 85/500 [02:45<13:01,  1.88s/it]Train loss: 2.59934
+
+Epoch 85
+Val loss:   0.45106
+ 17%|█▋        | 86/500 [02:47<12:57,  1.88s/it]Train loss: 2.66610
+
+Epoch 86
+Val loss:   0.34493
+ 17%|█▋        | 87/500 [02:49<12:52,  1.87s/it]Train loss: 2.88020
+
+Epoch 87
+Val loss:   0.42336
+ 18%|█▊        | 88/500 [02:51<12:48,  1.86s/it]Train loss: 2.57629
+
+Epoch 88
+Val loss:   0.65670
+ 18%|█▊        | 89/500 [02:53<12:47,  1.87s/it]Train loss: 2.72785
+
+Epoch 89
+Val loss:   0.46030
+ 18%|█▊        | 90/500 [02:55<12:46,  1.87s/it]Train loss: 2.60474
+
+Epoch 90
+Val loss:   0.40229
+ 18%|█▊        | 91/500 [02:56<12:53,  1.89s/it]Train loss: 2.77554
+
+Epoch 91
+Val loss:   0.40595
+ 18%|█▊        | 92/500 [02:58<12:47,  1.88s/it]Train loss: 2.78378
+
+Epoch 92
+Val loss:   0.39658
+ 19%|█▊        | 93/500 [03:00<12:40,  1.87s/it]Train loss: 2.72279
+
+Epoch 93
+Val loss:   0.51886
+ 19%|█▉        | 94/500 [03:02<12:36,  1.86s/it]Train loss: 2.77793
+
+Epoch 94
+Val loss:   0.38258
+ 19%|█▉        | 95/500 [03:04<12:36,  1.87s/it]Train loss: 2.55583
+
+Epoch 95
