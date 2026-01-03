@@ -1,5 +1,6 @@
 AML's agile implementation repository, with the task of rapid implementation
 
+Carry out integrity-oriented development in the early stages of the project. After a certain point in time, it will no longer be maintained as the main repository of the project, but some tests may still be conducted.
 
 ### (1) Env
 
