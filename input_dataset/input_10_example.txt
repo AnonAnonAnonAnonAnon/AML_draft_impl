@@ -1,0 +1,10 @@
+Train an ACT policy using 150 demonstrations without domain randomization, and evaluate it without domain randomization; target a success rate of ≥45%, with all other settings kept default.
+On Aloha-AgileX (bimanual), train a DP policy for Adjust Bottle using 100 demonstrations without domain randomization; keep the default head+wrist cameras, and the data should include RGB + qpos.
+For Open Microwave, train ACT using 50 demonstrations; both training and evaluation should enable random lighting and a random background; target a success rate of ≥15%.
+Collect 80 demonstrations with random clutter objects and random table height enabled, train a policy, and evaluate it under the full set of five domain-randomization options; target a success rate of ≥15%.
+I need a pick-and-place type task: choose the closest specific task from the existing benchmark tasks; use the default data budget, and report evaluation results without domain randomization.
+For Stack Bowls Two, train DP3 using 200 demonstrations without domain randomization; enable random lighting, clutter, and camera viewpoint perturbations, and evaluate under the same domain-randomization settings; target a success rate of around 20%.
+Task: pill bottle. Train ACT using 100 demonstrations, enabling random background + random table height; report evaluation results under no domain randomization and under full domain randomization.
+The data budget is only 30 demonstrations. Train with ACT; the data should include the head camera and RGB; report performance following the standard protocol.
+For Dump Bin Bigbin, train DP using 300 demonstrations; enable random lighting + clutter + camera distance perturbations; target a success rate of around 20%, and also save manipulation videos for analysis.
+On Aloha-AgileX, keep the default task and default settings, but increase the dataset to 120 demonstrations; report performance following the standard protocol.
