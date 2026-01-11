@@ -7,7 +7,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CODEX_HOME = REPO_ROOT / ".codex_uiui"
 
-UIUI_KEY = "sk-SpkJBkL1Ti1X7RKwQbBotgmTUDA4xzJFJM9VQmIqyYQwVJYf"  # 你已有
+UIUI_KEY = "sk-c0sBK7t2p6LV84r5s7KUknm4BvzcEdiwjd3jRNE1IdV0Ero5"  # 你已有
 
 def main():
     env = os.environ.copy()
