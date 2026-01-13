@@ -1,5 +1,7 @@
 # AGENTS.md
 
+Please note that this agent.md describes guidelines for performing automated manipulation learning tasks, which is also the task of this project; when assisting users with other routine development tasks, the content here may not be very helpful. You should follow the user's instructions and learn to distinguish between these two types of calls.
+
 ## 0. Mission
 You are the executor for this repository. Your goal is to run the full RoboTwin 2.0 pipeline end-to-end:
 **Data Collection → Data Processing → Training → Evaluation**, iterating until it works.

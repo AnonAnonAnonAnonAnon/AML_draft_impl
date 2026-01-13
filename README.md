@@ -76,12 +76,14 @@ python -m phoenix.server.main serve
 python agents/test_oasdk_doubao_phoenix.py
 ```
 
-Demo of uiui + Codex. Create File:
+Demo of uiui + Codex. 
 
-.codex_uiui/config.toml
+config systen level config.toml
+.codex_uiui/config.toml (history)
 
 ```bash
-python agents/run_codex_uiui_demo.py
+python agents/run_codex_simple__r20260113_150350.py
+python agents/run_codex_uiui_demo.py (history)
 ```
 
 Demo of uiui + opencode: 
