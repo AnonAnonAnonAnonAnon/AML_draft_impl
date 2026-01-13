@@ -114,4 +114,47 @@ Recommended commands:
 
 If any existing file was modified, stop and fix by reverting, then proceed using new copies/wrappers.
 
+## Execution & Debugging Rules (Supplement)
+
+1) If a run fails, crashes, or is interrupted unexpectedly:
+   - Treat it as a real failure, not as “done”.
+   - Actively diagnose and attempt fixes (logs first, then minimal repro, then patch).
+   - After applying fixes, re-run the relevant stage to confirm.
+
+2) If you see CUDA OOM (torch.OutOfMemoryError / CUDA out of memory):
+   - First suspect leftover processes from this run.
+     * Check process list for training/eval scripts and kill the entire process tree / process group if needed.
+   - Also check GPU availability:
+     * Use nvidia-smi to confirm free memory and which GPU is actually available.
+   - Only after confirming no leftovers and GPU availability, consider reducing batch size or other memory-saving tweaks.
+
+3) If training/evaluation yields 0 success rate (e.g., 0/20 or metric=0.0):
+   - Treat this as abnormal and must-investigate (not “acceptable result”).
+   - Provide a concise “Change Audit”:
+     * List every modification made to the original pipeline/config (files + diff summary).
+   - Then reason about likely causes:
+     * dataset correctness / instruction mismatch / eval config mismatch / randomization toggles / checkpoint used / action space mismatch, etc.
+   - Propose a prioritized fix plan, and execute the top items to validate.
+
+4) Process management is mandatory:
+   - Record PID(s) for every long-running process you launch (train/eval).
+   - Prefer launching via nohup for long runs. Save:
+     * command line
+     * PID
+     * log file path
+   - When stopping, clean up thoroughly:
+     * terminate by process group / tree, then re-check no residuals remain.
+
+5) Do not “cheat completion” by drastically shrinking training:
+   - Do NOT massively reduce num_epochs or save_freq just to finish quickly.
+   - Small smoke tests are allowed only for validating the pipeline wiring (minutes-scale),
+     but the final training/eval should use reasonable settings aligned with the intended experiment.
+   - You do NOT need to monitor runs interactively:
+     * After all edits are done, launch the required stages with nohup, record logs/PIDs, and exit.
+
+6) Logging and traceability:
+   - Maintain a run worklog for each RUN_ID:
+     * what changed, why, commands executed, PIDs, log locations, key metrics.
+   - Any “partial outputs” created due to interruption should be preserved and clearly labeled (e.g., *_partial), not mixed with final results.
+
 

@@ -94,6 +94,20 @@ Create File: .env opencode.json
 opencode run "请只读取本仓库：1) 列出顶层目录与作用；2) 指出入口文件/主要模块；3) 给出你下一步会读的3个关键文件路径"
 ```
 
+Demo of uiui + openai agent sdk + codex
+
+```bash
+python agents/demo_uiui_agents_codex_rag_min__r20260113_155218.py
+```
+
+demo of many tool function invoke:
+
+agents/agent_tools_min_strict__r20260113_163826.py
+
+```bash
+python agents/demo_uiui_agents_tools_min__r20260113_163826.py
+```
+
 ### (3) Full pipeline: Primitive
 
 #### (3.1) ACT 
@@ -198,6 +212,8 @@ cd full_pipeline
 
 nohup python run_robotwin_act_full.py > logs/act_full_run_11211636.log 2>&1 &
 ```
+
+a fail log: /home/sumita-mana/aml/AML_draft_impl/logs/codex_outer_20251230_144814.log
 
 #### (4.3) DP
 

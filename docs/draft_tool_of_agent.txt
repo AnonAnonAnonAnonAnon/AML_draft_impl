@@ -1,0 +1,54 @@
+外层 Tools 实现概要（收束版）
+0) 分工边界（一句话）
+Codex skills 负责“干活/产出”（跑脚本、训练评测、生成目录与日志、打印 RUN_ID/RUN_DIR/PID）。
+外层 tools 负责“看、找、控”（看大日志、定位产物、跟踪/清理进程、看资源、检索可用 skills）。
+1) Run Registry（运行记录/索引：只保留主干）
+目的：外层后续所有查询都能用 run_id 定位到 run_dir、log、pid、产物。
+接口
+run.upsert(run_id, run_dir, pids?, logs?, artifacts?, status?, note?) -> ok
+（Codex 每次交付新信息就补进去，统一入口）
+run.get(run_id) -> record
+run.search(keyword?, status?) -> [record]
+（轻量查：按 run_id 子串/备注关键字/状态）
+2) Log Tools（大日志查看：保留 tail + search，search 支持上下文）
+目的：日志上万行时，外层能“快速看当前状态/快速定位错误片段”，不把整份日志塞进对话。
+接口
+log.tail(path, n=200) -> {text, truncated}
+log.search(path, pattern, context=3, max_hits=50) -> [{path, line_no, lines}]
+context：命中行前后各取 context 行（解决你说的“只查词不够用”）
+run.log_tail(run_id, n=200) -> {path, text}
+（从 registry 的 logs 里选主日志/最新日志）
+run.log_search(run_id, pattern, context=3, max_hits=50) -> hits
+（在该 run 的所有 logs 里搜，返回聚合命中）
+3) Artifact Finder（产物定位：按 run_id 定位关键产物）
+目的：Codex 产物分散在目录中，外层一键定位“最可能要用的那些”。
+覆盖产物类型（你要求的口径）
+checkpoint
+video（评估视频/图片）
+data_cfg（数采配置）
+train_cfg
+eval_cfg
+worklog（Codex 工作日志/过程日志，如单独文件形态）
+接口
+artifact.find(run_id, kind, latest=true) -> [path]
+（latest=true 返回最可能用的那个；也允许返回多个候选）
+artifact.list(run_id) -> {kind: [path...]}
+（用于“这个 run 到底产出了哪些东西、在哪”）
+4) Proc Tools（进程跟踪与清理：围绕 RUN↔PID）
+目的：能回答“这个 run 的进程还在跑吗/跑完没/需要时能清掉”，并且做到干净。
+接口
+proc.status(run_id) -> [{pid, alive, cmd?}]
+proc.kill(run_id) -> {killed:[pid], still_alive:[pid]}
+前提：Codex 启动训练/评测时打印 PID；外层写入 registry（通过 run.upsert(... pids=...)）。
+5) Resource Tools（资源监视：GPU 为核心，附带磁盘）
+目的：快速判断“GPU 被谁占着”，并区分“我们 run 的 PID” vs “外部 PID（不动）”。
+接口
+resource.gpu() -> [{gpu_id, mem_used, procs:[{pid, mem, cmd?}]}]
+resource.disk(paths) -> [{path, free, used}]
+外层使用规则：
+先 resource.gpu() 拿到 PID；再用 run.get/run.search 判断是否属于我们 run；属于才允许配合 proc.kill(run_id) 处理。
+6) Skill Search（只保留一个：关键词检索）
+目的：外层根据“用户需求/当前要迭代什么”快速给出候选 skills 名称，提示 Codex 参考即可。
+接口
+skill.search(query, top_k=5) -> [{name, score, why}]
+（不提供 get；Codex 需要细节时自己在 skill 仓库里查。）

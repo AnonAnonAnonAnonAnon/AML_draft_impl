@@ -8,7 +8,7 @@ UIUI + OpenAI Agent SDK 最小测试（chat.completions）
 # ===== 配置区（按需修改） =====
 UIUI_BASE_URL = "https://sg.uiuiapi.com/v1"   # 或 https://api1.uiuiapi.com/v1
 MODEL_ID      = "gpt-5.2"                    # 若报 model not found，请用 UIUI 控制台显示的真实模型 ID
-API_KEY       = "sk-SpkJBkL1Ti1X7RKwQbBotgmTUDA4xzJFJM9VQmIqyYQwVJYf"    # 填你的 UIUI Key
+API_KEY       = "sk-c0sBK7t2p6LV84r5s7KUknm4BvzcEdiwjd3jRNE1IdV0Ero5"    # 填你的 UIUI Key
 
 # ===== 代码区（一般不用改） =====
 from openai import AsyncOpenAI
