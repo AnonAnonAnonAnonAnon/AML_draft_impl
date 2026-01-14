@@ -108,6 +108,13 @@ agents/agent_tools_min_strict__r20260113_163826.py
 python agents/demo_uiui_agents_tools_min__r20260113_163826.py
 ```
 
+Encapsulation and invocation of codex:
+
+```bash
+agents/codex_wrapper_with_log__r20260114_184230__archived__r20260114_190540.py
+python agents/example_codex_nl_instruction_with_log__r20260114_184230__archived__r20260114_190540.py
+```
+
 ### (3) Full pipeline: Primitive
 
 #### (3.1) ACT 
