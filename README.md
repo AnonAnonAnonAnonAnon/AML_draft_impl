@@ -102,10 +102,10 @@ python agents/demo_uiui_agents_codex_rag_min__r20260113_155218.py
 
 demo of many tool function invoke:
 
-agents/agent_tools_min_strict__r20260113_163826.py
+agents/agent_tools_min_strict__r20260115_192229.py
 
 ```bash
-python agents/demo_uiui_agents_tools_min__r20260113_163826.py
+python agents/demo_doubao_agents_tools_full__r20260115_192229.py
 ```
 
 Encapsulation and invocation of codex:

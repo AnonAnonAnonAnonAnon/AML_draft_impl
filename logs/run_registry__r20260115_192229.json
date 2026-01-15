@@ -3,7 +3,7 @@
     "run_id": "tools_demo__r20260115_192229",
     "run_dir": "logs/tools_demo_run__r20260115_192229",
     "pids": [
-      44082
+      46141
     ],
     "logs": [
       "logs/tools_demo__r20260115_192229.log"
@@ -30,6 +30,6 @@
     },
     "status": "demo",
     "note": "doubao tool demo",
-    "updated_at": "2026-01-15 19:35:26"
+    "updated_at": "2026-01-15 19:46:24"
   }
 }
