@@ -10,7 +10,11 @@ UIUIAPI 最小测试：
 # ===== 配置区（按需修改） =====
 UIUI_BASE_URL = "https://sg.uiuiapi.com/v1"   # 或 "https://api1.uiuiapi.com/v1"
 MODEL_ID      = "gpt-5.2"                     # 如报 model not found，请在 UIUI 控制台复制真实模型 ID
-API_KEY       = "sk-SpkJBkL1Ti1X7RKwQbBotgmTUDA4xzJFJM9VQmIqyYQwVJYf" # 替换成你自己的 UIUI 令牌/Key
+# API_KEY       = "sk-SpkJBkL1Ti1X7RKwQbBotgmTUDA4xzJFJM9VQmIqyYQwVJYf" # 常规key
+API_KEY       = "sk-c0sBK7t2p6LV84r5s7KUknm4BvzcEdiwjd3jRNE1IdV0Ero5" # codex通道key
+# API_KEY       = "sk-dBZBwnWoziBr4omEIZgPQX7B6aZzjFpCJd5DK3jqa7hn9sml" # codex通道key 0115新
+
+
 
 # ===== 代码区（一般不用改） =====
 from openai import OpenAI

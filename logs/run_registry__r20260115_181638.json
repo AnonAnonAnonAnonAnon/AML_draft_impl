@@ -1,0 +1,40 @@
+{
+  "x": {
+    "run_id": "x",
+    "run_dir": "logs",
+    "updated_at": "2026-01-15 18:47:49"
+  },
+  "tools_demo__r20260115_181638": {
+    "run_id": "tools_demo__r20260115_181638",
+    "run_dir": "logs/tools_demo_run__r20260115_181638",
+    "pids": [
+      36379
+    ],
+    "logs": [
+      "logs/tools_demo__r20260115_181638.log"
+    ],
+    "artifacts": {
+      "checkpoint": [
+        "logs/tools_demo_run__r20260115_181638/model__r20260115_181638.ckpt"
+      ],
+      "video": [
+        "logs/tools_demo_run__r20260115_181638/preview__r20260115_181638.mp4"
+      ],
+      "data_cfg": [
+        "logs/tools_demo_run__r20260115_181638/data__r20260115_181638.yaml"
+      ],
+      "train_cfg": [
+        "logs/tools_demo_run__r20260115_181638/train__r20260115_181638.json"
+      ],
+      "eval_cfg": [
+        "logs/tools_demo_run__r20260115_181638/eval__r20260115_181638.yaml"
+      ],
+      "worklog": [
+        "logs/tools_demo_run__r20260115_181638/worklog__r20260115_181638.md"
+      ]
+    },
+    "status": "demo",
+    "note": "uiui tool demo",
+    "updated_at": "2026-01-15 18:54:08"
+  }
+}
