@@ -1,0 +1,35 @@
+{
+  "tools_demo__r20260115_192229": {
+    "run_id": "tools_demo__r20260115_192229",
+    "run_dir": "logs/tools_demo_run__r20260115_192229",
+    "pids": [
+      44082
+    ],
+    "logs": [
+      "logs/tools_demo__r20260115_192229.log"
+    ],
+    "artifacts": {
+      "checkpoint": [
+        "logs/tools_demo_run__r20260115_192229/model__r20260115_192229.ckpt"
+      ],
+      "video": [
+        "logs/tools_demo_run__r20260115_192229/preview__r20260115_192229.mp4"
+      ],
+      "data_cfg": [
+        "logs/tools_demo_run__r20260115_192229/data__r20260115_192229.yaml"
+      ],
+      "train_cfg": [
+        "logs/tools_demo_run__r20260115_192229/train__r20260115_192229.json"
+      ],
+      "eval_cfg": [
+        "logs/tools_demo_run__r20260115_192229/eval__r20260115_192229.yaml"
+      ],
+      "worklog": [
+        "logs/tools_demo_run__r20260115_192229/worklog__r20260115_192229.md"
+      ]
+    },
+    "status": "demo",
+    "note": "doubao tool demo",
+    "updated_at": "2026-01-15 19:35:26"
+  }
+}

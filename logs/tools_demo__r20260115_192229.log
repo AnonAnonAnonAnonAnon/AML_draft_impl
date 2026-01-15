@@ -1,0 +1,4 @@
+INFO demo start
+WARN something minor
+ERROR synthetic failure
+INFO demo end
